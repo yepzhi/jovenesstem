@@ -1,0 +1,158 @@
+/* --- GLOBAL LIQUID GLASS UPDATES --- */
+
+/* Override section backgrounds to be transparent/translucent */
+.section-white,
+.section-light,
+.section-dark {
+    background-color: transparent !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* Semi-transparent backgrounds for readability if needed */
+.section-white::before,
+.section-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    /* Extremely subtle light tint */
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    border-radius: 32px;
+    margin: 20px;
+    /* Floating card effect for sections */
+}
+
+.section-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    /* Subtle dark tint */
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    border-radius: 32px;
+    margin: 20px;
+}
+
+/* Enhancing Book Animation - Page Curl & Index Fix */
+.book-inside {
+    /* New Index Image (Part 1) */
+    background-image: url('book_index_1.png') !important;
+    background-size: cover;
+    background-position: center;
+
+    /* Page Curl Gradient Overlay */
+    position: relative;
+    overflow: hidden;
+    transform-origin: left center;
+    box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.1);
+    /* Spine shadow */
+}
+
+.book-inside::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
+    /* Curl shadow */
+    pointer-events: none;
+}
+
+/* --- IMPLEMENTATION OPTIONS STYLES --- */
+.implementation-container {
+    padding: 20px 0 40px;
+}
+
+.impl-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.impl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-panel.highlight {
+    background: rgba(100, 100, 255, 0.1);
+    /* Subtle blue tint for curricular */
+    border: 1px solid rgba(100, 100, 255, 0.2);
+}
+
+.impl-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.impl-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.impl-time {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.impl-details {
+    list-style: none;
+    padding: 0;
+}
+
+.impl-details li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.impl-details strong {
+    color: #FFD700;
+    /* Gold accent */
+}
+
+.impl-cta-container {
+    text-align: center;
+    margin-top: 30px;
+}
