@@ -17,26 +17,34 @@
     --color-gray-700: #374151;
     --color-gray-800: #1f2937;
     --color-gray-900: #111827;
-    
-    /* Brand Colors */
-    --color-primary: #007AFF;
-    --color-primary-dark: #0055CC;
-    --color-secondary: #5856D6;
+
+    /* Brand Colors - Registered Trademark */
+    --color-brand-primary: #0047BB;
+    /* Azul Rey Institucional - STEM */
+    --color-brand-dark: #001540;
+    /* Azul Marino Profundo - jóvenes */
+    --color-brand-accent: #00C7B1;
+    /* Cian Tecnológico - Detalles */
+
+    --color-primary: var(--color-brand-primary);
+    --color-primary-dark: #00308F;
+    --color-secondary: var(--color-brand-dark);
     --color-accent-green: #34C759;
     --color-accent-orange: #FF9500;
     --color-accent-gold: #FFD700;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
-    --gradient-blue: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+
+    /* Gradients - Subtle background use only */
+    --gradient-primary: linear-gradient(135deg, #0047BB 0%, #002677 100%);
+    --gradient-blue: linear-gradient(135deg, #00C6FF 0%, #0047BB 100%);
     --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    --gradient-dark: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
-    --gradient-radial: radial-gradient(ellipse at top, #1a1a2e 0%, #0a0a14 100%);
-    
+    --gradient-dark: linear-gradient(180deg, #001540 0%, #000a1f 100%);
+    /* Branding background */
+    --gradient-radial: radial-gradient(ellipse at top, #001540 0%, #000510 100%);
+
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-display: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -45,21 +53,21 @@
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
     --spacing-3xl: 6rem;
-    
+
     /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
     --radius-xl: 28px;
     --radius-full: 9999px;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-glow: 0 0 60px rgba(0, 122, 255, 0.3);
-    
+
     /* Transitions */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,7 +76,9 @@
 }
 
 /* Reset & Base Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -101,7 +111,8 @@ a {
     color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -333,14 +344,12 @@ ul, ol {
 }
 
 .hero-title-jovenes {
-    color: var(--color-gray-900);
+    color: var(--color-brand-dark);
 }
 
 .hero-title-stem {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-brand-primary);
+    /* Removed background clip for solid brand color compliance */
 }
 
 .hero-subtitle {
@@ -438,8 +447,15 @@ ul, ol {
 }
 
 @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* ====================================
@@ -694,8 +710,13 @@ ul, ol {
 }
 
 @keyframes ringRotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .diagram-center {
@@ -741,10 +762,29 @@ ul, ol {
     box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
 }
 
-.node-1 { top: 0; left: 50%; transform: translateX(-50%); }
-.node-2 { top: 50%; right: 0; transform: translateY(-50%); }
-.node-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
-.node-4 { top: 50%; left: 0; transform: translateY(-50%); }
+.node-1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-2 {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.node-3 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-4 {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
 
 /* ====================================
    BLUEBOOK SECTION
@@ -769,7 +809,8 @@ ul, ol {
     transform-style: preserve-3d;
 }
 
-.book-front, .book-back {
+.book-front,
+.book-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -908,7 +949,7 @@ ul, ol {
     margin-bottom: var(--spacing-md);
 }
 
-.alignment-card > p:last-of-type {
+.alignment-card>p:last-of-type {
     font-size: 0.9375rem;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
@@ -1311,8 +1352,13 @@ ul, ol {
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .form-success {
@@ -1430,9 +1476,17 @@ ul, ol {
     animation: fadeUp 0.8s ease forwards;
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
 
 @keyframes fadeUp {
     to {
@@ -1469,47 +1523,48 @@ ul, ol {
    RESPONSIVE DESIGN
    ==================================== */
 @media (max-width: 1024px) {
+
     .method-showcase,
     .bluebook-showcase,
     .author-showcase {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
     }
-    
+
     .method-visual {
         order: -1;
     }
-    
+
     .method-diagram {
         width: 280px;
         height: 280px;
     }
-    
+
     .bluebook-content .section-title,
     .bluebook-content .section-eyebrow,
     .author-content .section-title,
     .author-content .section-eyebrow {
         text-align: center;
     }
-    
+
     .bluebook-content .section-title {
         justify-content: center;
     }
-    
+
     .bluebook-visual {
         order: -1;
     }
-    
+
     .author-image {
         display: flex;
         justify-content: center;
     }
-    
+
     .author-description,
     .author-credentials {
         text-align: center;
     }
-    
+
     .author-credentials {
         align-items: center;
     }
@@ -1519,49 +1574,49 @@ ul, ol {
     .nav-links {
         display: none;
     }
-    
+
     .nav-toggle {
         display: flex;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .footer-brand p {
         max-width: none;
     }
-    
+
     .footer-links {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: var(--spacing-sm);
         text-align: center;
     }
-    
+
     .alignment-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cert-card {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .book-container {
         width: 250px;
         height: 333px;
     }
-    
+
     .hero-book {
         max-width: 280px;
     }
@@ -1571,31 +1626,31 @@ ul, ol {
     :root {
         font-size: 14px;
     }
-    
+
     .section {
         padding: var(--spacing-2xl) 0;
     }
-    
+
     .hero {
         padding-top: calc(60px + var(--spacing-xl));
     }
-    
+
     .hero-cta {
         flex-direction: column;
     }
-    
+
     .btn {
         width: 100%;
     }
-    
+
     .pricing-card {
         padding: var(--spacing-lg);
     }
-    
+
     .price {
         font-size: 4rem;
     }
-    
+
     .contact-form {
         padding: var(--spacing-md);
     }
