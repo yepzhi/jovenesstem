@@ -156,3 +156,44 @@
     text-align: center;
     margin-top: 30px;
 }
+
+/* --- DUAL PRICING GRID --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card.secondary {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.pricing-card.primary {
+    border-color: rgba(100, 100, 255, 0.3);
+    background: rgba(100, 100, 255, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .pricing-card.primary {
+        transform: none;
+    }
+}
