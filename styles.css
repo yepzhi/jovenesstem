@@ -18,13 +18,15 @@
     --color-gray-800: #1f2937;
     --color-gray-900: #111827;
 
-    /* Brand Colors - Registered Trademark (Corrected from Image) */
-    --color-brand-red: #E34125;
-    /* 'j' color */
-    --color-brand-wine: #58324F;
-    /* 's' color */
-    --color-brand-stem: #1D2D50;
-    /* STEM solid color */
+    /* Brand Colors - Registered Trademark (Asset Analysis) */
+    --color-brand-red: #D14030;
+    /* 'j' start - Rust/Red */
+    --color-brand-wine: #54364D;
+    /* 's' end - Deep Wine */
+    --color-brand-stem: #16335E;
+    /* STEM - Dark Navy */
+    --color-brand-siip: #3A5570;
+    /* SIIP - Slate Blue */
 
     --color-brand-primary: var(--color-brand-stem);
     --color-brand-dark: #0F172A;
@@ -37,7 +39,7 @@
     --color-accent-gold: #FFD700;
 
     /* Gradients */
-    --gradient-logo: linear-gradient(90deg, var(--color-brand-red) 0%, #a04040 50%, var(--color-brand-wine) 100%);
+    --gradient-logo: linear-gradient(90deg, var(--color-brand-red) 0%, #9a3b3e 50%, var(--color-brand-wine) 100%);
     --gradient-primary: linear-gradient(135deg, var(--color-brand-stem) 0%, var(--color-brand-wine) 100%);
     --gradient-blue: linear-gradient(135deg, #00C6FF 0%, #0047BB 100%);
     --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
