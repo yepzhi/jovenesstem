@@ -18,27 +18,30 @@
     --color-gray-800: #1f2937;
     --color-gray-900: #111827;
 
-    /* Brand Colors - Registered Trademark */
-    --color-brand-primary: #0047BB;
-    /* Azul Rey Institucional - STEM */
-    --color-brand-dark: #001540;
-    /* Azul Marino Profundo - jóvenes */
-    --color-brand-accent: #00C7B1;
-    /* Cian Tecnológico - Detalles */
+    /* Brand Colors - Registered Trademark (Corrected from Image) */
+    --color-brand-red: #E34125;
+    /* 'j' color */
+    --color-brand-wine: #58324F;
+    /* 's' color */
+    --color-brand-stem: #1D2D50;
+    /* STEM solid color */
 
-    --color-primary: var(--color-brand-primary);
-    --color-primary-dark: #00308F;
-    --color-secondary: var(--color-brand-dark);
+    --color-brand-primary: var(--color-brand-stem);
+    --color-brand-dark: #0F172A;
+
+    --color-primary: var(--color-brand-stem);
+    --color-primary-dark: #101c36;
+    --color-secondary: var(--color-brand-wine);
     --color-accent-green: #34C759;
     --color-accent-orange: #FF9500;
     --color-accent-gold: #FFD700;
 
-    /* Gradients - Subtle background use only */
-    --gradient-primary: linear-gradient(135deg, #0047BB 0%, #002677 100%);
+    /* Gradients */
+    --gradient-logo: linear-gradient(90deg, var(--color-brand-red) 0%, #a04040 50%, var(--color-brand-wine) 100%);
+    --gradient-primary: linear-gradient(135deg, var(--color-brand-stem) 0%, var(--color-brand-wine) 100%);
     --gradient-blue: linear-gradient(135deg, #00C6FF 0%, #0047BB 100%);
     --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    --gradient-dark: linear-gradient(180deg, #001540 0%, #000a1f 100%);
-    /* Branding background */
+    --gradient-dark: linear-gradient(180deg, #0F172A 0%, #050914 100%);
     --gradient-radial: radial-gradient(ellipse at top, #001540 0%, #000510 100%);
 
     /* Typography */
@@ -163,13 +166,33 @@ ol {
     align-items: center;
 }
 
+/* Removed duplicate hero-title styles */
 .logo-jovenes {
-    color: var(--color-gray-800);
+    background: var(--gradient-logo);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 2px;
 }
 
 .logo-stem {
-    color: var(--color-primary);
+    color: var(--color-brand-stem);
     font-weight: 700;
+}
+
+/* ... existing styles ... */
+
+.hero-title-jovenes {
+    background: var(--gradient-logo);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-right: 0.1em;
+    /* Prevent clipping italic/gradient */
+}
+
+.hero-title-stem {
+    color: var(--color-brand-stem);
 }
 
 .nav-links {
@@ -343,14 +366,7 @@ ol {
     margin-bottom: var(--spacing-md);
 }
 
-.hero-title-jovenes {
-    color: var(--color-brand-dark);
-}
 
-.hero-title-stem {
-    color: var(--color-brand-primary);
-    /* Removed background clip for solid brand color compliance */
-}
 
 .hero-subtitle {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
