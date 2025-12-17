@@ -1,0 +1,86 @@
+/* ====================================
+   3D BOOK ANIMATION STYLES
+   ==================================== */
+
+.hero-book-scene {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    perspective: 1500px;
+}
+
+.book-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-15deg) rotateX(10deg);
+    transition: transform 0.1s;
+    /* Smooth scroll update */
+}
+
+.book-cover,
+.book-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-sm);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    transform-origin: left center;
+}
+
+.book-cover {
+    z-index: 2;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.book-inside {
+    z-index: 1;
+    background: #fff;
+    transform: rotateY(0deg);
+    /* Initial state */
+}
+
+.book-inside img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.book-spine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background: #111;
+    /* Dark spine */
+    transform: rotateY(90deg) translateZ(-15px);
+    z-index: 1;
+}
+
+/* Adjust Glow */
+.hero-book-glow {
+    top: 60%;
+    left: 40%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .hero-book-scene {
+        width: 240px;
+        height: 360px;
+        margin: 0 auto;
+    }
+}

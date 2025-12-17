@@ -245,52 +245,70 @@ function simulateApiCall(data) {
 // ====================================
 // PARALLAX EFFECTS
 // ====================================
+// Parallax Effects and Book Animation
+// Parallax Effects and Book Animation
 function initParallaxEffects() {
-    const heroBook = document.querySelector('.hero-book');
-    const diagramNodes = document.querySelectorAll('.diagram-node');
+    const heroBook = document.getElementById('heroBook');
+    const heroSection = document.getElementById('hero');
+    const heroContent = document.querySelector('.hero-content');
 
-    // Mouse parallax for hero book
-    document.addEventListener('mousemove', (e) => {
-        if (!heroBook) return;
+    if (!heroBook || !heroSection) return;
 
-        const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-        const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+    // Scroll Animation
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
 
-        heroBook.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        // Calculate scroll progress within hero section (0 to 1)
+        let progress = scrollY / (heroHeight * 0.8);
+        progress = Math.min(Math.max(progress, 0), 1); // Clamp between 0 and 1
+
+        if (window.innerWidth > 768) {
+            // Desktop Animation
+            // Rotate the whole book container slightly
+            const rotationY = -15 + (progress * 5); // From -15deg to -10deg
+
+            // Open the cover
+            const coverRotation = progress * -140; // Open up to -140deg
+
+            // Move book slightly to the right to see the inside
+            const translateX = progress * 100;
+
+            heroBook.style.transform = `translateX(${translateX}px) rotateY(${rotationY}deg) rotateX(10deg)`;
+
+            const cover = heroBook.querySelector('.book-cover');
+            if (cover) {
+                cover.style.transform = `rotateY(${coverRotation}deg)`;
+            }
+
+            // Parallax for content
+            if (heroContent) {
+                heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
+                heroContent.style.opacity = 1 - progress * 1.5;
+            }
+        }
+    });
+
+    // Mouse Parallax (only at top)
+    heroSection.addEventListener('mousemove', (e) => {
+        if (window.scrollY > 100) return;
+
+        // Simple parallax calculation
+        const x = (window.innerWidth / 2 - e.clientX) / 40;
+        const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+        heroBook.style.transition = 'transform 0.1s ease-out';
+        // Apply base rotation plus mouse offset
+        heroBook.style.transform = `rotateY(${x - 15}deg) rotateX(${y + 10}deg)`;
     });
 
     // Reset on mouse leave
-    document.addEventListener('mouseleave', () => {
-        if (heroBook) {
-            heroBook.style.transform = 'rotateY(-5deg) rotateX(5deg)';
+    heroSection.addEventListener('mouseleave', () => {
+        if (window.scrollY < 50) {
+            heroBook.style.transition = 'transform 0.5s ease';
+            heroBook.style.transform = 'rotateY(-15deg) rotateX(10deg)';
         }
     });
-
-    // Floating animation for diagram nodes
-    diagramNodes.forEach((node, index) => {
-        node.style.animation = `float ${3 + index * 0.5}s ease-in-out infinite`;
-        node.style.animationDelay = `${index * 0.2}s`;
-    });
-
-    // Add floating keyframes
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(-50%); }
-            50% { transform: translateY(-10px) translateX(-50%); }
-        }
-        .node-2 { animation-name: floatRight !important; }
-        .node-4 { animation-name: floatLeft !important; }
-        @keyframes floatRight {
-            0%, 100% { transform: translateY(-50%) translateX(0); }
-            50% { transform: translateY(-50%) translateX(10px); }
-        }
-        @keyframes floatLeft {
-            0%, 100% { transform: translateY(-50%) translateX(0); }
-            50% { transform: translateY(-50%) translateX(-10px); }
-        }
-    `;
-    document.head.appendChild(style);
 }
 
 // ====================================
