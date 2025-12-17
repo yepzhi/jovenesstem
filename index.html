@@ -670,9 +670,11 @@
                     <p class="section-eyebrow">El Autor</p>
                     <h2 class="section-title">Alberto Yépiz</h2>
                     <p class="author-description">
-                        Creador del método SIIP NextGen y autor del BlueBook v1. Con una visión clara de transformar la
-                        educación STEM en México y el mundo, Alberto ha dedicado años de investigación para desarrollar
-                        un programa que realmente conecte con las nuevas generaciones.
+                        Con una trayectoria sólida en gigantes globales como <strong>Apple, PepsiCo, Avis y
+                            Santillana</strong>, Alberto combina experiencia corporativa de clase mundial con su pasión
+                        por la educación. Como creador del método <strong>SIIP NextGen</strong>, transforma esta visión
+                        estratégica en un programa educativo de vanguardia que conecta realmente con las nuevas
+                        generaciones.
                     </p>
                     <div class="author-credentials">
                         <div class="credential">
@@ -830,12 +832,30 @@
         </div>
     </footer>
 
-    <!-- Chatbot Widget -->
-    <a href="https://yepzhi.com" target="_blank" class="chatbot-widget" aria-label="Chat con nosotros">
-        <div class="chatbot-icon">💬</div>
-        <span class="chatbot-text">¿Dudas? Chatea aquí</span>
-    </a>
+    <!-- CHATBOT BILINGÜE -->
+    <button class="chatbot-button" id="chatbotBtn">
+        💬 Chat🤖
+    </button>
 
+    <div class="chatbot-overlay" id="chatbotOverlay">
+        <div class="chatbot-modal">
+            <div class="chatbot-header">
+                <div>
+                    <h3>💬 JóvenesSTEM Bot 🌎</h3>
+                    <p>Español / English • Soporte Oficial</p>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages"></div>
+            <div class="chatbot-input-area">
+                <input type="text" class="chatbot-input" id="chatbotInput"
+                    placeholder="Escribe tu pregunta... / Type your question...">
+                <button class="chatbot-send" id="chatbotSend">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
     <script src="script.js"></script>
 </body>
 
