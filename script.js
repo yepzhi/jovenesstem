@@ -8,9 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initMobileMenu();
     initContactForm();
+    initBookExplorer();
     initSmoothScroll();
     initParallaxEffects();
 });
+
+// ====================================
+// BOOK EXPLORER
+// ====================================
+function initBookExplorer() {
+    const tabs = document.querySelectorAll('.explorer-tab');
+    const panels = document.querySelectorAll('.explorer-panel');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and panels
+            tabs.forEach(t => t.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+
+            // Add active class to clicked tab
+            tab.classList.add('active');
+
+            // Show corresponding panel
+            const panelId = tab.getAttribute('data-tab');
+            const panel = document.getElementById(panelId);
+            if (panel) {
+                panel.classList.add('active');
+            }
+        });
+    });
+}
+
 
 // ====================================
 // NAVIGATION

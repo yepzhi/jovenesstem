@@ -1,0 +1,214 @@
+/* ====================================
+   BOOK EXPLORER SECTION (Added)
+   ==================================== */
+.book-explorer {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-100);
+    overflow: hidden;
+}
+
+.explorer-nav {
+    display: flex;
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-gray-100);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.explorer-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.explorer-tab {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-base);
+    border-right: 1px solid var(--color-gray-100);
+    position: relative;
+    opacity: 0.6;
+}
+
+.explorer-tab:last-child {
+    border-right: none;
+}
+
+.explorer-tab:hover {
+    background: rgba(0, 0, 0, 0.02);
+    opacity: 0.8;
+}
+
+.explorer-tab.active {
+    background: var(--color-white);
+    opacity: 1;
+    box-shadow: 0 -2px 0 var(--color-primary) inset;
+}
+
+.tab-number {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.tab-title {
+    display: block;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    font-size: 1rem;
+}
+
+.explorer-content-container {
+    padding: var(--spacing-xl);
+    min-height: 400px;
+}
+
+.explorer-panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.explorer-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.panel-info h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.panel-info p {
+    font-size: 1.125rem;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+}
+
+.panel-stats {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.topic-item:hover {
+    background: var(--color-white);
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px);
+}
+
+.topic-icon {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-white);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+}
+
+.topic-text strong {
+    display: block;
+    color: var(--color-gray-900);
+    font-weight: 600;
+    margin-bottom: 0.125rem;
+}
+
+.topic-text small {
+    display: block;
+    color: var(--color-gray-500);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .panel-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .explorer-nav {
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+    .explorer-tab {
+        border-right: none;
+        border-bottom: 1px solid var(--color-gray-100);
+        padding: var(--spacing-md);
+    }
+
+    .explorer-tab.active {
+        box-shadow: 2px 0 0 var(--color-primary) inset;
+        background: var(--color-gray-50);
+    }
+}
