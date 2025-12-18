@@ -1,0 +1,105 @@
+/* Certificate Frame Analysis */
+.cert-showcase-centered {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+    padding: 40px 0;
+}
+
+.cert-frame-container {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    transform: rotate(-2deg);
+    /* Poco atravezadito */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cert-frame-container:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.cert-frame {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 8px solid #fff;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.cert-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    /* Adjust based on need */
+    display: block;
+}
+
+.cert-legend {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent-gold);
+    color: var(--color-gray-900);
+    padding: 5px 20px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    border: 2px solid #fff;
+    z-index: 10;
+}
+
+/* Center Check List */
+.check-list-center {
+    list-style: none;
+    padding: 0;
+}
+
+.check-list-center li {
+    margin-bottom: var(--spacing-sm);
+    padding-left: 30px;
+    position: relative;
+    color: var(--color-gray-700);
+    font-size: 1.05rem;
+}
+
+.check-list-center li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-blue);
+    /* Or green */
+    font-weight: bold;
+}
+
+/* Fix Ghost Text for Headers (RENAC / NGSS) */
+.text-gold-glow {
+    color: #FFD700 !important;
+    /* Bright Gold */
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    font-size: 2.5rem;
+    /* Make them big and visible */
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Ensure secondary text in dark sections is readable */
+.alignment-full {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.alignment-card p[data-i18n] {
+    color: rgba(255, 255, 255, 0.8);
+}
