@@ -18,12 +18,12 @@ const translations = {
         vision: {
             eyebrow: "La Misión",
             title: "Preparando a las<br><span class=\"text-gradient\">próximas generaciones</span>",
-            card1_title: "Orientación hacia carreras STEM",
-            card1_desc: "Incrementamos el número de estudiantes que eligen carreras en Ciencia, Tecnología, Ingeniería y Matemáticas.",
+            card1_title: "Orientamos+ hacia carreras STEM.",
+            card1_desc: "Incrementamos el número de estudiantes que eligen carreras en Ciencia, Tecnología, Ingeniería y Matemáticas 🚀",
             card2_title: "Innovación y Desarrollo",
-            card2_desc: "Impulsamos la innovación aumentando la cantidad de personas activas en campos STEM para el desarrollo económico.",
+            card2_desc: "Impulsamos la innovación aumentando la cantidad de personas activas en campos STEM sumando esfuerzos al desarrollo económico sostenido e innovación sustentable 🌱",
             card3_title: "Sustentabilidad",
-            card3_desc: "Contribuimos a la sustentabilidad de nuestras sociedades mediante el conocimiento y la tecnología consciente."
+            card3_desc: "Contribuimos a la sustentabilidad de nuestras sociedades mediante el conocimiento y la tecnología consciente por un innovador método divulgativo 📚"
         },
         method: {
             eyebrow: "Metodología Educativa",
