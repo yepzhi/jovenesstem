@@ -44,8 +44,8 @@
 
 /* Enhancing Book Animation - Page Curl & Index Fix */
 .book-inside {
-    /* New Index Image (Part 1) */
-    background-image: url('book_index_1.png') !important;
+    /* New Index Image (Part Start) */
+    background-image: url('book_index_start.png') !important;
     background-size: cover;
     background-position: center;
 
@@ -53,8 +53,11 @@
     position: relative;
     overflow: hidden;
     transform-origin: left center;
-    box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.1);
-    /* Spine shadow */
+    box-shadow: inset 20px 0 40px rgba(0, 0, 0, 0.15);
+    /* Deeper spine shadow */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 10px;
+    /* Slight page bend shape */
 }
 
 .book-inside::after {
@@ -62,10 +65,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 20%;
+    width: 25%;
     height: 100%;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
-    /* Curl shadow */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.08), transparent 40%, rgba(0, 0, 0, 0.02) 80%);
+    /* Gradient curl simulation */
     pointer-events: none;
 }
 
@@ -195,5 +198,56 @@
 @media (max-width: 768px) {
     .pricing-card.primary {
         transform: none;
+    }
+}
+
+/* --- TEXT GLOW UTILITIES --- */
+.text-gold-glow {
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 165, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* --- CERTIFICATE STYLES --- */
+.cert-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cert-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.cert-image {
+    display: block;
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+}
+
+.cert-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #16335E;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    .cert-badge {
+        right: 10px;
+        bottom: 10px;
     }
 }

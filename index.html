@@ -19,10 +19,17 @@
     <link rel="stylesheet" href="styles_explorer.css">
     <link rel="stylesheet" href="styles_updates.css">
     <link rel="stylesheet" href="styles_book.css">
-    <link rel="stylesheet" href="styles_glass.css">
+    <link rel="stylesheet" href="styles_intro.css">
 </head>
 
 <body>
+    <!-- Intro Animation Overlay -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <div class="intro-gradient-zoom"></div>
+    </div>
+    <script src="intro.js"></script>
+
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
@@ -476,26 +483,22 @@
     <section class="section section-offset" id="certificado">
         <div class="container mobile-stack reverse">
             <div class="image-half animate-on-scroll">
-                <div class="cert-wrapper" style="background: white;">
-                    <img src="certificate_real.png" alt="Certificado JóvenesSTEM" class="cert-image">
-                    <div class="cert-badge"
-                        style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #16335E;">Valor
-                        Curricular</div>
-                </div>
+                <img src="certificate_final.png" alt="Certificado JóvenesSTEM" class="cert-image">
             </div>
-            <div class="content-half animate-on-scroll">
-                <p class="section-eyebrow">Tu Futuro Profesional</p>
-                <h2 class="section-title">Certificación <span class="text-siip">Oficial</span></h2>
-                <p class="text-lg">
-                    Al completar el programa, cada estudiante recibe un certificado que valida sus competencias en
-                    Ciencia, Tecnología y Programación.
-                </p>
-                <ul class="check-list">
-                    <li>Alineado con la <strong>Red Nacional de Actividades Científicas (RENAC)</strong>.</li>
-                    <li>Alineado a estándares <strong>NGSS (Next Generation Science Standards)</strong> de USA.</li>
-                    <li>Reconocimiento tangible de tus nuevas habilidades para tu currículum académico.</li>
-                </ul>
-            </div>
+        </div>
+        <div class="content-half animate-on-scroll">
+            <p class="section-eyebrow">Tu Futuro Profesional</p>
+            <h2 class="section-title">Certificación <span class="text-siip">Oficial</span></h2>
+            <p class="text-lg">
+                Al completar el programa, cada estudiante recibe un certificado que valida sus competencias en
+                Ciencia, Tecnología y Programación.
+            </p>
+            <ul class="check-list">
+                <li>Alineado con la <strong>Red Nacional de Actividades Científicas (RENAC)</strong>.</li>
+                <li>Alineado a estándares <strong>NGSS (Next Generation Science Standards)</strong> de USA.</li>
+                <li>Reconocimiento tangible de tus nuevas habilidades para tu currículum académico.</li>
+            </ul>
+        </div>
         </div>
     </section>
 
@@ -515,7 +518,7 @@
                         <span class="badge-country">🇲🇽</span>
                         <span class="badge-text">México</span>
                     </div>
-                    <h3>RENAC</h3>
+                    <h3 class="text-gold-glow">RENAC</h3>
                     <p class="alignment-full">Red Nacional de Actividades Científicas y Competencias</p>
                     <p>Nuestro contenido está completamente alineado con el marco de competencias nacionales de México,
                         asegurando relevancia y validez curricular.</p>
@@ -533,7 +536,7 @@
                         <span class="badge-country">🇺🇸</span>
                         <span class="badge-text">USA</span>
                     </div>
-                    <h3>NGSS</h3>
+                    <h3 class="text-gold-glow">NGSS</h3>
                     <p class="alignment-full">Next Generation Science Standards</p>
                     <p>Diseñado para cumplir con los estándares de ciencia de próxima generación de Estados Unidos,
                         facilitando la implementación internacional.</p>
@@ -610,7 +613,7 @@
                     </div>
                 </div>
                 <div class="impl-cta-container">
-                    <a href="#contacto" class="btn btn-primary">Conoce las Opciones</a>
+                    <a href="#contacto" class="btn btn-primary">Conoce las Opciones de Implementación</a>
                 </div>
             </div>
             <div class="pricing-showcase animate-on-scroll">
@@ -625,8 +628,8 @@
                                 <span class="price">19</span>
                                 <span class="period">MXN</span>
                             </div>
-                            <p class="pricing-note">+ material impreso (~$70 MXN)</p>
-                            <p class="pricing-note small">Total Estimado: ~$90-100 MXN</p>
+                            <p class="pricing-note">+ costo material impreso ($60-70 MXN)</p>
+                            <p class="pricing-note small">Costo total aprox: ~$90-100 MXN</p>
                         </div>
                         <div class="pricing-features">
                             <h4>Incluye:</h4>
@@ -643,14 +646,21 @@
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Certificación Básica L1
+                                    Certificación Oficial
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Materiales de 20 Horas
+                                    Acceso a Laboratorio y Manual
+                                </li>
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Asesoría del Autor
                                 </li>
                             </ul>
                         </div>
@@ -666,8 +676,8 @@
                                 <span class="price">39</span>
                                 <span class="period">MXN</span>
                             </div>
-                            <p class="pricing-note">+ material impreso (~$70 MXN)</p>
-                            <p class="pricing-note small">Total Estimado: ~$110 MXN</p>
+                            <p class="pricing-note">+ costo material impreso ($60-70 MXN)</p>
+                            <p class="pricing-note small">Costo total aprox: ~$100-110 MXN</p>
                         </div>
                         <div class="pricing-features">
                             <h4>Incluye:</h4>
@@ -702,10 +712,14 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="#contacto" class="btn btn-primary btn-full">Solicitar Implementación</a>
+                        <!-- Button moved out -->
                     </div>
                 </div>
             </div>
+            <div class="pricing-cta-container" style="text-align: center; margin-top: 40px;">
+                <a href="#contacto" class="btn btn-primary btn-lg">Solicitar Implementación</a>
+            </div>
+
             <div class="pricing-comparison animate-on-scroll delay-1">
                 <p class="comparison-title">Comparación de valor</p>
                 <div class="comparison-bar">
@@ -715,7 +729,7 @@
                     </div>
                     <div class="comparison-item comparison-jovenes">
                         <span class="comparison-label">JóvenesSTEM</span>
-                        <span class="comparison-value">$39 MXN</span>
+                        <span class="comparison-value">$19 MXN</span>
                     </div>
                 </div>
             </div>
