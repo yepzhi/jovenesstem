@@ -27,25 +27,25 @@
 /* Gradient Zoom Effect Container */
 .intro-gradient-zoom {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
     width: 100%;
     height: 100%;
     opacity: 0;
     z-index: 2;
     background: radial-gradient(circle at center,
-            rgba(255, 215, 0, 0.4) 0%,
-            rgba(215, 64, 48, 0.4) 20%,
-            rgba(84, 54, 77, 0.6) 40%,
-            rgba(22, 51, 94, 0.8) 60%,
+            rgba(100, 200, 255, 0.6) 0%,
+            rgba(66, 126, 234, 0.6) 20%,
+            rgba(22, 51, 94, 0.8) 40%,
+            rgba(15, 23, 42, 0.9) 70%,
             #000 100%);
-    transform: scale(0.1);
     pointer-events: none;
 }
 
 /* Animation Classes */
 .animate-zoom-in {
-    animation: zoomGradient 1.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+    animation: zoomGradient 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 
 @keyframes zoomGradient {

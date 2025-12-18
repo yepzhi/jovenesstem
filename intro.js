@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.add('intro-hidden');
             // Stop animation to save resources
             cancelAnimationFrame(animationId);
-        }, 1200); // Wait for zoom effect to peak
+        }, 800); // Faster zoom effect peak
     }
 
     // Start Sequence

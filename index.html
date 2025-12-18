@@ -81,18 +81,30 @@
             </div>
         </div>
         <div class="hero-visual animate-scale-in delay-2">
-            <div class="hero-book-scene">
-                <div class="book-3d" id="heroBook">
+            <!-- 3D Book Scene -->
+            <div class="hero-book-scene" id="bookScene">
+                <div class="book-3d">
+                    <!-- Front Cover -->
                     <div class="book-cover">
-                        <img src="FRON FINAL FIXED V3.png" alt="BlueBook Cover">
+                        <img src="book_cover_final.png" alt="BlueBook v1 Cover" loading="eager">
                     </div>
-                    <div class="book-spine"></div>
+                    <!-- Inside Page (Revealed on Open) -->
                     <div class="book-inside">
-                        <img src="book_inner.png" alt="BlueBook Inside">
+                        <img src="book_page_2.png" alt="BlueBook Page 2">
                     </div>
+                    <!-- Spine -->
+                    <div class="book-spine"></div>
                 </div>
                 <div class="hero-book-glow"></div>
             </div>
+
+            <script>
+                // Auto-open book shortly after intro
+                setTimeout(() => {
+                    const book = document.querySelector('.book-3d');
+                    if (book) book.classList.add('open');
+                }, 4500); 
+            </script>
         </div>
         <div class="hero-scroll-indicator">
             <div class="scroll-line"></div>
