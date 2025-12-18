@@ -94,7 +94,12 @@
                 <div class="book-3d">
                     <!-- Front Cover -->
                     <div class="book-cover">
-                        <img src="book_cover_final.png" alt="BlueBook v1 Cover" loading="eager">
+                        <!-- Front Face (Outside) -->
+                        <div class="face-front">
+                            <img src="book_cover_final.png" alt="BlueBook v1 Cover" loading="eager">
+                        </div>
+                        <!-- Back Face (Inside - prevents mirroring) -->
+                        <div class="face-back"></div>
                     </div>
                     <!-- Inside Page (Revealed on Open) -->
                     <div class="book-inside">
@@ -202,7 +207,8 @@
                 </h2>
                 <p class="section-subtitle animate-on-scroll" data-i18n="method.subtitle">
                     STEM Intervention for Innovation Program for Next Generations.<br>
-                    Alineado a NGSS y RENAC.
+                    Alineado a <span class="text-highlight-gold">NGSS</span> y <span
+                        class="text-highlight-gold">RENAC</span>.
                 </p>
             </div>
             <div class="method-showcase">

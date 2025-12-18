@@ -24,13 +24,39 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: var(--radius-sm);
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+    transform-style: preserve-3d;
     transform-origin: left center;
     transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 5;
+}
+
+.face-front,
+.face-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.face-front {
+    z-index: 2;
     background: #111;
-    /* Fallback */
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.face-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-back {
+    transform: rotateY(180deg);
+    background: #fdfbf7;
+    /* Off-white paper color */
+    box-shadow: inset 5px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .book-inside {

@@ -624,16 +624,28 @@ ol {
     color: var(--color-white);
 }
 
+/* Improved Subtitle Visibility */
 .section-subtitle {
     font-size: 1.125rem;
-    color: var(--color-gray-500);
+    color: var(--color-gray-600);
+    /* Darker for better contrast on light */
     max-width: 600px;
     margin: 0 auto;
+    text-shadow: none;
+    /* Ensure no ghost effect */
 }
 
 .section-dark .section-subtitle,
 .section-gradient .section-subtitle {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    /* Higher opacity */
+    font-weight: 400;
+}
+
+.text-highlight-gold {
+    color: var(--color-accent-gold);
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
 /* ====================================
