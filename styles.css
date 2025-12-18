@@ -189,6 +189,12 @@ ol {
     padding: 0 var(--spacing-md);
 }
 
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .nav-logo {
     font-family: var(--font-display);
     font-size: 1.5rem;
