@@ -59,9 +59,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=39">
-    <link rel="stylesheet" href="styles_explorer.css?v=39">
-    <link rel="stylesheet" href="styles_updates.css?v=39">
+    <link rel="stylesheet" href="styles.css?v=40">
+    <link rel="stylesheet" href="styles_explorer.css?v=40">
+    <link rel="stylesheet" href="styles_updates.css?v=40">
     <link rel="stylesheet" href="styles_book.css">
     <link rel="stylesheet" href="styles_intro.css">
     <link rel="stylesheet" href="styles_certificate_fix.css">
@@ -73,7 +73,7 @@
         <canvas id="intro-canvas"></canvas>
         <div class="intro-gradient-zoom"></div>
     </div>
-    <script src="translations.js?v=39"></script> <!-- Load Translations -->
+    <script src="translations.js?v=40"></script> <!-- Load Translations -->
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -787,59 +787,59 @@
 
                     <!-- CARD 1: ESCUELAS PÚBLICAS - GRATIS -->
                     <div class="pricing-card featured">
-                        <div class="pricing-ribbon">🎁 GRATIS</div>
+                        <div class="pricing-ribbon" data-i18n="price.ribbon_free">🎁 GRATIS</div>
                         <div class="pricing-header">
                             <div class="pricing-icon">🏫</div>
-                            <h3 class="pricing-title">Escuelas Públicas</h3>
-                            <span class="pricing-badge">Fast Track o Curricular</span>
+                            <h3 class="pricing-title" data-i18n="price.pub_title">Escuelas Públicas</h3>
+                            <span class="pricing-badge" data-i18n="price.pub_badge">Fast Track o Curricular</span>
                             <div class="pricing-amount">
                                 <span class="currency">$</span>
                                 <span class="price">0</span>
                                 <span class="period">MXN</span>
                             </div>
-                            <p class="pricing-note">Solo costo de material impreso</p>
+                            <p class="pricing-note" data-i18n="price.pub_note">Solo costo de material impreso</p>
                         </div>
                         <div class="pricing-features">
-                            <h4>Incluye:</h4>
+                            <h4 data-i18n="price.inc_title">Incluye:</h4>
                             <ul>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Licencia de uso completa
+                                    <span data-i18n="price.pub_item1">Licencia de uso completa</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    BlueBook v1 (digital)
+                                    <span data-i18n="price.pub_item2">BlueBook v1 (digital)</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Certificación Oficial
+                                    <span data-i18n="price.pub_item3">Certificación Oficial</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Guía del Docente
+                                    <span data-i18n="price.pub_item4">Guía del Docente</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Capacitación virtual
+                                    <span data-i18n="price.pub_item5">Capacitación virtual</span>
                                 </li>
                             </ul>
-                            <p class="pricing-ideal"><strong>Ideal para:</strong> Escuelas públicas de cualquier nivel
-                            </p>
+                            <p class="pricing-ideal" data-i18n="price.pub_ideal"><strong>Ideal para:</strong> Escuelas
+                                públicas de cualquier nivel</p>
                         </div>
                     </div>
 
@@ -848,57 +848,57 @@
                         <div class="pricing-header">
                             <div class="pricing-icon">⚡</div>
                             <h3 class="pricing-title">Fast Track</h3>
-                            <span class="pricing-badge">20 Horas · Intensivo</span>
+                            <span class="pricing-badge" data-i18n="price.ft_badge">20 Horas · Intensivo</span>
                             <div class="pricing-amount">
                                 <span class="currency">$</span>
                                 <span class="price">19</span>
-                                <span class="period">MXN / alumno</span>
+                                <span class="period" data-i18n="price.per_alum">MXN / alumno</span>
                             </div>
-                            <p class="pricing-note">+ material impreso (~$70 MXN)</p>
+                            <p class="pricing-note" data-i18n="price.ft_note">+ material impreso (~$70 MXN)</p>
                         </div>
                         <div class="pricing-features">
-                            <h4>Incluye:</h4>
+                            <h4 data-i18n="price.inc_title">Incluye:</h4>
                             <ul>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    BlueBook v1 (Versión FastTrack)
+                                    <span data-i18n="price.ft_item1">BlueBook v1 (Versión FastTrack)</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Certificación Oficial
+                                    <span data-i18n="price.ft_item2">Certificación Oficial</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Acceso a Laboratorio Virtual
+                                    <span data-i18n="price.ft_item3">Acceso a Laboratorio Virtual</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Manual del Docente
+                                    <span data-i18n="price.ft_item4">Manual del Docente</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Asesoría del Autor
+                                    <span data-i18n="price.ft_item5">Asesoría del Autor</span>
                                 </li>
                             </ul>
-                            <p class="pricing-ideal"><strong>Ideal para:</strong> Empresas, programas públicos, tiempo
-                                reducido</p>
-                            <p class="pricing-format"><strong>Formato:</strong> 5 semanas · 4 hrs/sesión · 1 vez/semana
-                            </p>
+                            <p class="pricing-ideal" data-i18n="price.ft_ideal"><strong>Ideal para:</strong> Empresas,
+                                programas públicos, tiempo reducido</p>
+                            <p class="pricing-format" data-i18n="price.ft_format"><strong>Formato:</strong> 5 semanas ·
+                                4 hrs/sesión · 1 vez/semana</p>
                         </div>
                     </div>
 
@@ -907,57 +907,57 @@
                         <div class="pricing-header">
                             <div class="pricing-icon">🎓</div>
                             <h3 class="pricing-title">Curricular</h3>
-                            <span class="pricing-badge">90 Horas · Completo</span>
+                            <span class="pricing-badge" data-i18n="price.cr_badge">90 Horas · Completo</span>
                             <div class="pricing-amount">
                                 <span class="currency">$</span>
                                 <span class="price">39</span>
-                                <span class="period">MXN / alumno</span>
+                                <span class="period" data-i18n="price.per_alum">MXN / alumno</span>
                             </div>
-                            <p class="pricing-note">+ material impreso (~$70 MXN)</p>
+                            <p class="pricing-note" data-i18n="price.cr_note">+ material impreso (~$70 MXN)</p>
                         </div>
                         <div class="pricing-features">
-                            <h4>Incluye:</h4>
+                            <h4 data-i18n="price.inc_title">Incluye:</h4>
                             <ul>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    BlueBook v1 Completo (90 horas)
+                                    <span data-i18n="price.cr_item1">BlueBook v1 Completo (90 horas)</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Certificación Oficial Completa
+                                    <span data-i18n="price.cr_item2">Certificación Oficial Completa</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Laboratorio Práctico Incluido
+                                    <span data-i18n="price.cr_item3">Laboratorio Práctico Incluido</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Guía Docente Premium
+                                    <span data-i18n="price.cr_item4">Guía Docente Premium</span>
                                 </li>
                                 <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Asesoría Personalizada del Autor
+                                    <span data-i18n="price.cr_item5">Asesoría Personalizada del Autor</span>
                                 </li>
                             </ul>
-                            <p class="pricing-ideal"><strong>Ideal para:</strong> Escuelas privadas, integración
-                                curricular</p>
-                            <p class="pricing-format"><strong>Formato:</strong> Anual (1hr/sem) o Semestral (2hrs/sem)
-                            </p>
+                            <p class="pricing-ideal" data-i18n="price.cr_ideal"><strong>Ideal para:</strong> Escuelas
+                                privadas, integración curricular</p>
+                            <p class="pricing-format" data-i18n="price.cr_format"><strong>Formato:</strong> Anual
+                                (1hr/sem) o Semestral (2hrs/sem)</p>
                         </div>
                     </div>
                 </div>
