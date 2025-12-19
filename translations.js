@@ -37,7 +37,7 @@ const translations = {
         },
         method: {
             eyebrow: "Metodología Educativa",
-            subtitle: "STEM Intervention for Innovation Program for Next Generations.<br>Alineado a NGSS y RENAC.",
+            subtitle: "<strong>Programa de Intervención STEM para las siguientes generaciones.</strong><br><span style='font-size:0.9em; opacity:0.9;'>(STEM Intervention for Innovation Program for Next Generations) por sus siglas en inglés.</span><br><br>Alineado a <span class='text-highlight-gold'>NGSS</span> y <span class='text-highlight-gold'>RENAC</span>.",
             feat1_title: "Enseñanza divulgativa",
             feat1_desc: "Hacemos las disciplinas STEM más accesibles, comprensibles y atractivas para los jóvenes mediante contenido cuidadosamente diseñado que conecta conceptos complejos con la realidad tecnológica actual.",
             feat2_title: "Aprendizaje basado en competencias",
