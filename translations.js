@@ -155,6 +155,13 @@ const translations = {
             cred3: "Método SIIP NextGen",
             cta: "Conocer más en @yepzhi.com"
         },
+        contact: {
+            eyebrow: "Comienza Hoy",
+            title: "Implementa JóvenesSTEM<br><span class=\"text-gradient-blue\">en tu institución</span>",
+            subtitle: "Completa el formulario y nos pondremos en contacto contigo para iniciar el proceso de implementación.",
+            prefer_direct: "¿Prefieres contacto directo?",
+            whatsapp_btn: "WhatsApp Directo"
+        },
         faq: {
             eyebrow: "Resuelve tus Dudas",
             title: "Preguntas<br><span class=\"text-gradient-blue\">Frecuentes</span>",
@@ -325,6 +332,13 @@ const translations = {
             cred2: "Author of BlueBook v1",
             cred3: "SIIP NextGen Method",
             cta: "Learn more at @yepzhi.com"
+        },
+        contact: {
+            eyebrow: "Start Today",
+            title: "Implement JóvenesSTEM<br><span class=\"text-gradient-blue\">at your institution</span>",
+            subtitle: "Complete the form and we will contact you to start the implementation process.",
+            prefer_direct: "Prefer direct contact?",
+            whatsapp_btn: "Direct WhatsApp"
         },
         faq: {
             eyebrow: "Got Questions?",
