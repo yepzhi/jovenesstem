@@ -2103,3 +2103,28 @@ ol {
     color: #1a1a1a;
     letter-spacing: 0.5px;
 }
+
+/* ===== INSTAGRAM BUTTON ===== */
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+}
+
+.btn-instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+}
+
+.btn-instagram svg {
+    flex-shrink: 0;
+}

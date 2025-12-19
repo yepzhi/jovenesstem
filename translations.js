@@ -160,7 +160,8 @@ const translations = {
             title: "Implementa JóvenesSTEM<br><span class=\"text-gradient-blue\">en tu institución</span>",
             subtitle: "Completa el formulario y nos pondremos en contacto contigo para iniciar el proceso de implementación.",
             prefer_direct: "¿Prefieres contacto directo?",
-            whatsapp_btn: "WhatsApp Directo"
+            whatsapp_btn: "WhatsApp Directo",
+            instagram_btn: "Síguenos en Instagram"
         },
         faq: {
             eyebrow: "Resuelve tus Dudas",
@@ -338,7 +339,8 @@ const translations = {
             title: "Implement JóvenesSTEM<br><span class=\"text-gradient-blue\">at your institution</span>",
             subtitle: "Complete the form and we will contact you to start the implementation process.",
             prefer_direct: "Prefer direct contact?",
-            whatsapp_btn: "Direct WhatsApp"
+            whatsapp_btn: "Direct WhatsApp",
+            instagram_btn: "Follow us on Instagram"
         },
         faq: {
             eyebrow: "Got Questions?",
