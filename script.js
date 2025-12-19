@@ -11,7 +11,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initBookExplorer();
     initSmoothScroll();
     initParallaxEffects();
+    initFAQ();
 });
+
+// ====================================
+// FAQ ACCORDION
+// ====================================
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all other items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+}
 
 // ====================================
 // BOOK EXPLORER
@@ -202,8 +230,21 @@ function initContactForm() {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            // Simulate API call (replace with actual endpoint)
-            await simulateApiCall(data);
+            // Send email using EmailJS
+            await emailjs.send(
+                'service_fbw602a',  // EmailJS service ID
+                'template_bombkwl', // EmailJS template ID
+                {
+                    from_name: data.nombre,
+                    from_email: data.email,
+                    institution: data.institucion,
+                    phone: data.telefono || 'No proporcionado',
+                    type: data.tipo,
+                    students: data.alumnos,
+                    message: data.mensaje || 'Sin mensaje adicional',
+                    to_email: 'yepzhi@gmail.com'
+                }
+            );
 
             // Show success message
             form.style.display = 'none';
@@ -214,7 +255,7 @@ function initContactForm() {
 
         } catch (error) {
             console.error('Form submission error:', error);
-            alert('Hubo un error al enviar el formulario. Por favor intenta de nuevo.');
+            alert('Hubo un error al enviar el formulario. Por favor intenta de nuevo o usa WhatsApp.');
         } finally {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
@@ -233,14 +274,7 @@ function initContactForm() {
     });
 }
 
-// Simulate API call for form submission
-function simulateApiCall(data) {
-    return new Promise((resolve) => {
-        console.log('Form data:', data);
-        // Simulate network delay
-        setTimeout(resolve, 1500);
-    });
-}
+// Note: simulateApiCall is no longer used - EmailJS handles form submission
 
 // ====================================
 // PARALLAX EFFECTS

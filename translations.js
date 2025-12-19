@@ -6,7 +6,8 @@ const translations = {
             bluebook: "BlueBook",
             alignment: "Alineación",
             price: "Precio",
-            implement: "Implementar"
+            faq: "FAQ",
+            implement: "Agenda una demo sin costo"
         },
         hero: {
             eyebrow: "Certificación STEM Innovadora",
@@ -15,25 +16,30 @@ const translations = {
             cta_secondary: "Conocer al Autor",
             scroll: "Desliza"
         },
+        video: {
+            eyebrow: "Mira el video explicativo",
+            title: "Qué nos<br><span class=\"text-gradient-blue\">mueve</span>"
+        },
         vision: {
             eyebrow: "Visión",
             title: "Preparando a las<br><span class=\"text-gradient\">próximas generaciones</span>",
-            card1_title: "Orientamos+ hacia carreras STEM",
-            card1_desc: "Incrementamos el número de estudiantes que eligen carreras en Ciencia, Tecnología, Ingeniería y Matemáticas 🚀",
-            card2_title: "Innovación y Desarrollo",
-            card2_desc: "Impulsamos la innovación aumentando la cantidad de personas activas en campos STEM sumando esfuerzos a un desarrollo económico sostenido e innovación sustentable 🌱",
-            card3_title: "Sustentabilidad",
-            card3_desc: "Contribuimos a la sustentabilidad de nuestras sociedades mediante el conocimiento y la tecnología consciente con un innovador método de aprendizaje divulgativo 📚"
+            card1_title: "Educación Masiva",
+            card1_desc: "Auto-implementable, de ultra bajo costo —o incluso en <strong>plan gratuito</strong>— requiere recursos mínimos, sin laboratorios complejos ni insumos costosos.",
+            card2_title: "Derecho Universal",
+            card2_desc: "La divulgación científica no es un privilegio. Diseñado para todos, con enfoque en jóvenes de <strong>6 a 18 años</strong> que se convertirán en agentes de cambio.",
+            card3_title: "Orientación STEM",
+            card3_desc: "Transformamos su visión del futuro, inspirándolos a elegir carreras en <strong>Ciencia, Tecnología, Ingeniería y Matemáticas</strong> para construir un mañana mejor 🌱",
+            closing: "<em>Nuestra visión:</em> hacer del <strong>mundo del futuro</strong> una realidad hoy."
         },
         method: {
             eyebrow: "Metodología Educativa",
             subtitle: "STEM Intervention for Innovation Program for Next Generations.<br>Alineado a NGSS y RENAC.",
-            feat1_title: "Enseñanza Divulgativa",
-            feat1_desc: "Hacemos los campos STEM más accesibles, entendibles y atractivos para los jóvenes a través de contenido cuidadosamente diseñado.",
-            feat2_title: "Aprendizaje Interactivo",
-            feat2_desc: "El método combina teoría con práctica, permitiendo a los estudiantes experimentar y descubrir por sí mismos generando competencias reales.",
-            feat3_title: "Certificación Validada",
-            feat3_desc: "Al completar el programa, los estudiantes reciben una certificación que avala sus conocimientos, habilidades y los convierte en <strong>*JóvenesSTEM* MR</strong>"
+            feat1_title: "Enseñanza divulgativa",
+            feat1_desc: "Hacemos las disciplinas STEM más accesibles, comprensibles y atractivas para los jóvenes mediante contenido cuidadosamente diseñado que conecta conceptos complejos con la realidad tecnológica actual.",
+            feat2_title: "Aprendizaje basado en competencias",
+            feat2_desc: "Nuestro método integra teoría con prácticas sencillas en el aula, permitiendo que los estudiantes exploren y construyan conocimiento por sí mismos, generando aprendizaje significativo sin invertir tiempo ni recursos en experimentos complejos o costosos.",
+            feat3_title: "Certificación validada",
+            feat3_desc: "Al finalizar el programa, los estudiantes obtienen una certificación tras aprobar una evaluación que valida sus conocimientos y competencias, acreditándolos como JóvenesSTEM, mejor preparados para los retos del entorno tecnológico actual."
         },
         bluebook: {
             eyebrow: "El Material",
@@ -50,8 +56,8 @@ const translations = {
             tab1: "Ciencia Fundamental",
             tab2: "Tecnología Aplicada",
             tab3: "Programación en contexto",
-            cap1_title: "La base del universo",
-            cap1_desc: "Viajaremos desde el Big Bang hasta la estructura misma de la vida. Entender las reglas del juego (Física, Biología, Química) vital para dominar y entender el futuro de la tecnologia que nos rodea, ser ciudadanos concientes en la Ciencia del Cosmos.",
+            cap1_title: "Fundamentación Ciencia",
+            cap1_desc: "Viajaremos desde el Big Bang hasta la estructura misma de la vida. Entender las reglas del juego (Física, Biología, Química) es vital para dominar y entender el futuro de la tecnología, ser ciudadanos del Cosmos conscientes y soportados en Ciencia. +50 conceptos científicos contenidos en esta unidad.",
             cap1_item1_title: "Cosmos y Átomos",
             cap1_item1_desc: "Del Big Bang a la física de partículas.",
             cap1_item2_title: "ADN y Genética",
@@ -61,9 +67,9 @@ const translations = {
             cap1_item4_title: "Gravedad y Movimiento",
             cap1_item4_desc: "Leyes fundamentales que nos rigen.",
             cap2_title: "Ingeniería del Hardware",
-            cap2_desc: "Desmitificamos la \"caja negra\". La representación tecnologica de nuestra ciencia, enteremos que es vivir en un mundo de estadares tecnologicos y como se avanza cuando se ha llegado a los límites, lo que significa trabajar en las fronteras de la Ciencia.",
+            cap2_desc: "Desmitificamos la \"caja negra\". Nuestra tecnología es la representación tecnológica de nuestra ciencia, enteremos que es vivir en un mundo de estándares tecnológicos y cómo se avanza cuando se ha llegado a los límites, lo que significa trabajar en las fronteras de la Ciencia.",
             cap2_item1_title: "Industria del Silicio",
-            cap2_item1_desc: "Chips, obleas y nanómetros.",
+            cap2_item1_desc: "Microchips y nanómetros.",
             cap2_item2_title: "Conectividad Inalámbrica",
             cap2_item2_desc: "Redes 5G, Wi-Fi y latencia en sistemas.",
             cap2_item3_title: "Procesadores",
@@ -97,11 +103,12 @@ const translations = {
             ngss_desc: "Diseñado para cumplir con los estándares de ciencia de próxima generación de Estados Unidos, facilitando la implementación internacional.",
             ngss_verified: "Verificado",
             cert_card_title: "Certificación Oficial",
-            cert_card_desc: "Al completar el programa, cada estudiante recibe un certificado oficial de JóvenesSTEM que avala sus conocimientos y habilidades en STEM."
+            cert_card_desc: "Al completar el programa, cada estudiante recibe un certificado oficial de JóvenesSTEM que avala sus competencias y habilidades en STEM."
         },
         price: {
             eyebrow: "Inversión Accesible",
             title: "Educación de calidad.",
+            title_new: "Educación de calidad<br><span class=\"text-gradient-blue\">para todos</span>",
             imp_title: "Opciones de Implementación",
             fast_title: "Fast Track (Intensivo)",
             fast_ideal: "<strong>Ideal para:</strong> Instituciones con tiempos limitados.",
@@ -135,7 +142,21 @@ const translations = {
             cred1: "Investigador y Educador",
             cred2: "Autor de BlueBook v1",
             cred3: "Método SIIP NextGen",
-            cta: "Conocer más en Yepzhi.com"
+            cta: "Conocer más en @yepzhi.com"
+        },
+        faq: {
+            eyebrow: "Resuelve tus Dudas",
+            title: "Preguntas<br><span class=\"text-gradient-blue\">Frecuentes</span>",
+            q1: "¿Qué incluye el programa JóvenesSTEM?",
+            a1: "El programa incluye el BlueBook v1 (libro de trabajo), acceso a materiales digitales, guía docente, y certificación oficial al completar el curso.",
+            q2: "¿Necesito equipo especial para implementarlo?",
+            a2: "No se requiere equipo especializado. El programa está diseñado para funcionar con recursos básicos disponibles en la mayoría de las escuelas.",
+            q3: "¿Qué capacitación reciben los docentes?",
+            a3: "Ofrecemos capacitación integral para docentes que incluye metodología SIIP NextGen, uso de materiales, y estrategias de evaluación.",
+            q4: "¿Cuánto tiempo dura el programa?",
+            a4: "Ofrecemos dos modalidades: Fast Track (20 horas intensivas) y Curricular (90 horas distribuidas en el ciclo escolar).",
+            q5: "¿Cómo puedo agendar una demostración?",
+            a5: "Haz clic en \"Agenda una demo sin costo\" en la parte superior de esta página, o contáctanos directamente por WhatsApp para programar una sesión personalizada."
         }
     },
     en: {
@@ -145,7 +166,8 @@ const translations = {
             bluebook: "BlueBook",
             alignment: "Alignment",
             price: "Pricing",
-            implement: "Implement"
+            faq: "FAQ",
+            implement: "Schedule a free demo"
         },
         hero: {
             eyebrow: "Innovative STEM Certification",
@@ -154,15 +176,20 @@ const translations = {
             cta_secondary: "Meet the Author",
             scroll: "Scroll"
         },
+        video: {
+            eyebrow: "Watch the explainer video",
+            title: "What<br><span class=\"text-gradient-blue\">moves us</span>"
+        },
         vision: {
             eyebrow: "The Mission",
             title: "Preparing the<br><span class=\"text-gradient\">next generations</span>",
-            card1_title: "STEM Career Orientation",
-            card1_desc: "We increase the number of students choosing careers in Science, Technology, Engineering, and Mathematics.",
-            card2_title: "Innovation & Development",
-            card2_desc: "We drive innovation by increasing the number of active people in STEM fields for economic development.",
-            card3_title: "Sustainability",
-            card3_desc: "We contribute to the sustainability of our societies through knowledge and conscious technology."
+            card1_title: "Massive Education",
+            card1_desc: "Self-implementing, ultra-low cost —or even on a <strong>free plan</strong>— requires minimal resources, no complex labs or expensive supplies.",
+            card2_title: "Universal Right",
+            card2_desc: "Science education is not a privilege. Designed for everyone, focused on youth <strong>ages 6 to 18</strong> who will become agents of change.",
+            card3_title: "STEM Orientation",
+            card3_desc: "We transform their vision of the future, inspiring them to pursue careers in <strong>Science, Technology, Engineering, and Mathematics</strong> for a better tomorrow 🌱",
+            closing: "<em>Our vision:</em> making the <strong>world of the future</strong> a reality today."
         },
         method: {
             eyebrow: "Educational Methodology",
@@ -241,6 +268,7 @@ const translations = {
         price: {
             eyebrow: "Affordable Investment",
             title: "Quality education.",
+            title_new: "Quality education<br><span class=\"text-gradient-blue\">for everyone</span>",
             imp_title: "Implementation Options",
             fast_title: "Fast Track (Intensive)",
             fast_ideal: "<strong>Ideal for:</strong> Institutions with limited time.",
@@ -274,7 +302,21 @@ const translations = {
             cred1: "Researcher and Educator",
             cred2: "Author of BlueBook v1",
             cred3: "SIIP NextGen Method",
-            cta: "Learn more at Yepzhi.com"
+            cta: "Learn more at @yepzhi.com"
+        },
+        faq: {
+            eyebrow: "Got Questions?",
+            title: "Frequently<br><span class=\"text-gradient-blue\">Asked Questions</span>",
+            q1: "What does the JóvenesSTEM program include?",
+            a1: "The program includes BlueBook v1 (workbook), access to digital materials, teacher guide, and official certification upon completion.",
+            q2: "Do I need special equipment to implement it?",
+            a2: "No specialized equipment is required. The program is designed to work with basic resources available in most schools.",
+            q3: "What training do teachers receive?",
+            a3: "We offer comprehensive teacher training that includes SIIP NextGen methodology, material usage, and assessment strategies.",
+            q4: "How long does the program last?",
+            a4: "We offer two modes: Fast Track (20 intensive hours) and Curricular (90 hours distributed throughout the school year).",
+            q5: "How can I schedule a demonstration?",
+            a5: "Click \"Schedule a free demo\" at the top of this page, or contact us directly via WhatsApp to schedule a personalized session."
         }
     }
 };
@@ -299,12 +341,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Update Button
+        // Update Button - show opposite language option
         if (lang === 'es') {
-            langBtn.innerHTML = '🇺🇸';
+            langBtn.innerHTML = '<span class="lang-flag">🇺🇸</span><span class="lang-text">ENG</span>';
             langBtn.title = "Switch to English";
         } else {
-            langBtn.innerHTML = '🇲🇽';
+            langBtn.innerHTML = '<span class="lang-flag">🇲🇽</span><span class="lang-text">ESP</span>';
             langBtn.title = "Cambiar a Español";
         }
 

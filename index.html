@@ -10,14 +10,58 @@
         content="STEM, educación, certificación, RENAC, NGSS, ciencia, tecnología, ingeniería, matemáticas, México, BlueBook">
     <meta name="author" content="Alberto Yépiz">
     <title>JóvenesSTEM | El Futuro de la Educación STEM</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jovenesstem.com/">
+    <meta property="og:title" content="JóvenesSTEM | Certificación STEM Innovadora">
+    <meta property="og:description"
+        content="Programa de certificación STEM alineado a RENAC y NGSS. Prepara a tus estudiantes para carreras del futuro.">
+    <meta property="og:image" content="https://jovenesstem.com/book_cover_final.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jovenesstem.com/">
+    <meta property="twitter:title" content="JóvenesSTEM | Certificación STEM Innovadora">
+    <meta property="twitter:description" content="Programa de certificación STEM alineado a RENAC y NGSS.">
+    <meta property="twitter:image" content="https://jovenesstem.com/book_cover_final.png">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "JóvenesSTEM",
+        "description": "Programa de certificación STEM innovador para escuelas, alineado con estándares RENAC y NGSS.",
+        "url": "https://jovenesstem.com",
+        "logo": "https://jovenesstem.com/book_cover_final.png",
+        "founder": {
+            "@type": "Person",
+            "name": "Alberto Yépiz"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hermosillo",
+            "addressRegion": "Sonora",
+            "addressCountry": "MX"
+        },
+        "offers": {
+            "@type": "Offer",
+            "name": "Certificación Fast Track",
+            "price": "19",
+            "priceCurrency": "MXN",
+            "description": "Programa intensivo de 20 horas de educación STEM"
+        }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=8">
-    <link rel="stylesheet" href="styles_explorer.css?v=8">
-    <link rel="stylesheet" href="styles_updates.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=39">
+    <link rel="stylesheet" href="styles_explorer.css?v=39">
+    <link rel="stylesheet" href="styles_updates.css?v=39">
     <link rel="stylesheet" href="styles_book.css">
     <link rel="stylesheet" href="styles_intro.css">
     <link rel="stylesheet" href="styles_certificate_fix.css">
@@ -29,7 +73,15 @@
         <canvas id="intro-canvas"></canvas>
         <div class="intro-gradient-zoom"></div>
     </div>
-    <script src="translations.js?v=8"></script> <!-- Load Translations -->
+    <script src="translations.js?v=39"></script> <!-- Load Translations -->
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Initialize EmailJS with public key
+            emailjs.init("lx2xrPKsBJ7Z6wfaP");
+        })();
+    </script>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
@@ -39,8 +91,9 @@
                     <span class="logo-jovenes">jóvenes</span><span class="logo-stem">STEM<sup
                             style="font-size: 0.5em; position: relative; top: -0.7em;">&reg;</sup></span>
                 </a>
-                <a href="https://wa.me/qr/MESCGUHS7SYSF1" target="_blank" class="nav-cta" data-i18n="nav.implement"
-                    style="color: #ffffff !important;">Implementar</a>
+                <a href="#" class="nav-lang-btn" id="langToggle" title="Switch to English">
+                    <span class="lang-flag">🇺🇸</span><span class="lang-text">ENG</span>
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="#vision" data-i18n="nav.vision">Visión</a></li>
@@ -48,9 +101,9 @@
                 <li><a href="#bluebook" data-i18n="nav.bluebook">BlueBook</a></li>
                 <li><a href="#alineacion" data-i18n="nav.alignment">Alineación</a></li>
                 <li><a href="#precio" data-i18n="nav.price">Precio</a></li>
-                <li><a href="#" class="nav-lang-btn" id="langToggle" title="Switch to English"
-                        style="font-size: 20px; padding: 5px; border-radius: 50%; border: 1px solid transparent;">🇺🇸</a>
-                </li>
+                <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+                <li><a href="https://wa.me/qr/MESCGUHS7SYSF1" target="_blank" class="nav-cta" data-i18n="nav.implement"
+                        style="color: #ffffff !important;">Agenda una demo sin costo</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span>
@@ -126,68 +179,47 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-eyebrow animate-on-scroll" data-i18n="vision.eyebrow">Visión</p>
-                <h2 class="section-title animate-on-scroll" data-i18n="vision.title">
+                <h2 class="section-title animate-on-scroll">
                     Preparando a las<br>
                     <span class="text-gradient">próximas generaciones</span>
                 </h2>
             </div>
+
+            <!-- New Vision Cards -->
             <div class="vision-grid">
+                <!-- Card 1: Educación Masiva -->
                 <div class="vision-card animate-on-scroll">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="35" stroke="url(#grad1)" stroke-width="2" />
-                            <path d="M40 20V40L52 52" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round" />
-                            <defs>
-                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#007AFF" />
-                                    <stop offset="100%" style="stop-color:#5856D6" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h3 data-i18n="vision.card1_title">Orientamos+ hacia carreras STEM</h3>
-                    <p data-i18n="vision.card1_desc">Incrementamos el número de estudiantes que eligen carreras en
-                        Ciencia, Tecnología, Ingeniería y Matemáticas 🚀</p>
+                    <div class="vision-emoji">🌍</div>
+                    <h3 data-i18n="vision.card1_title">Educación Masiva</h3>
+                    <p data-i18n="vision.card1_desc">Auto-implementable, de ultra bajo costo —o incluso en <strong>plan
+                            gratuito</strong>— requiere recursos mínimos, sin laboratorios complejos ni insumos
+                        costosos.</p>
                 </div>
+
+                <!-- Card 2: Derecho Universal -->
                 <div class="vision-card animate-on-scroll delay-1">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M40 15L55 30L40 45L25 30L40 15Z" stroke="url(#grad2)" stroke-width="2" />
-                            <path d="M40 35L55 50L40 65L25 50L40 35Z" stroke="url(#grad2)" stroke-width="2" />
-                            <defs>
-                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#34C759" />
-                                    <stop offset="100%" style="stop-color:#30D158" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h3 data-i18n="vision.card2_title">Innovación y Desarrollo</h3>
-                    <p data-i18n="vision.card2_desc">Impulsamos la innovación aumentando la cantidad de personas activas
-                        en campos STEM sumando esfuerzos a un desarrollo económico sostenido e
-                        innovación sustentable 🌱</p>
-                </div>
-                <div class="vision-card animate-on-scroll delay-2">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="25" stroke="url(#grad3)" stroke-width="2" />
-                            <path d="M30 45C30 45 35 35 40 35C45 35 50 45 50 45" stroke="url(#grad3)" stroke-width="2"
-                                stroke-linecap="round" />
-                            <circle cx="32" cy="35" r="3" fill="url(#grad3)" />
-                            <circle cx="48" cy="35" r="3" fill="url(#grad3)" />
-                            <defs>
-                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FF9500" />
-                                    <stop offset="100%" style="stop-color:#FF6B00" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h3 data-i18n="vision.card3_title">Sustentabilidad</h3>
-                    <p data-i18n="vision.card3_desc">Contribuimos a la sustentabilidad de nuestras sociedades mediante
-                        el conocimiento y la tecnología consciente con un innovador método de aprendizaje divulgativo 📚
+                    <div class="vision-emoji">✨</div>
+                    <h3 data-i18n="vision.card2_title">Derecho Universal</h3>
+                    <p data-i18n="vision.card2_desc">La divulgación científica no es un privilegio. Diseñado para todos,
+                        con enfoque en jóvenes de <strong>6 a 18 años</strong> que se convertirán en agentes de cambio.
                     </p>
                 </div>
+
+                <!-- Card 3: Orientación STEM -->
+                <div class="vision-card animate-on-scroll delay-2">
+                    <div class="vision-emoji">🚀</div>
+                    <h3 data-i18n="vision.card3_title">Orientación STEM</h3>
+                    <p data-i18n="vision.card3_desc">Transformamos su visión del futuro, inspirándolos a elegir carreras
+                        en <strong>Ciencia, Tecnología, Ingeniería y Matemáticas</strong> para construir un mañana mejor
+                        🌱</p>
+                </div>
+            </div>
+
+            <!-- Vision Closing Statement -->
+            <div class="vision-closing animate-on-scroll delay-3">
+                <p class="closing-text" data-i18n="vision.closing">
+                    <em>Nuestra visión:</em> hacer del <strong>mundo del futuro</strong> una realidad hoy.
+                </p>
             </div>
         </div>
     </section>
@@ -211,28 +243,30 @@
                     <div class="method-feature">
                         <div class="method-number">01</div>
                         <div class="method-text">
-                            <h4 data-i18n="method.feat1_title">Enseñanza Divulgativa</h4>
-                            <p data-i18n="method.feat1_desc">Hacemos los campos STEM más accesibles, entendibles y
-                                atractivos para los jóvenes a
-                                través de contenido cuidadosamente diseñado.</p>
+                            <h4 data-i18n="method.feat1_title">Enseñanza divulgativa</h4>
+                            <p data-i18n="method.feat1_desc">Hacemos las disciplinas STEM más accesibles, comprensibles
+                                y atractivas para los jóvenes mediante contenido cuidadosamente diseñado que conecta
+                                conceptos complejos con la realidad tecnológica actual.</p>
                         </div>
                     </div>
                     <div class="method-feature">
                         <div class="method-number">02</div>
                         <div class="method-text">
-                            <h4 data-i18n="method.feat2_title">Aprendizaje Interactivo</h4>
-                            <p data-i18n="method.feat2_desc">El método combina teoría con práctica, permitiendo a los
-                                estudiantes experimentar y descubrir por sí mismos generando competencias reales.</p>
+                            <h4 data-i18n="method.feat2_title">Aprendizaje basado en competencias</h4>
+                            <p data-i18n="method.feat2_desc">Nuestro método integra teoría con prácticas sencillas en el
+                                aula, permitiendo que los estudiantes exploren y construyan conocimiento por sí mismos,
+                                generando aprendizaje significativo sin invertir tiempo ni recursos en experimentos
+                                complejos o costosos.</p>
                         </div>
                     </div>
                     <div class="method-feature">
                         <div class="method-number">03</div>
                         <div class="method-text">
-                            <h4 data-i18n="method.feat3_title">Certificación Validada</h4>
-                            <p data-i18n="method.feat3_desc">Al completar el programa, los estudiantes reciben una
-                                certificación que avala sus conocimientos, habilidades y los convierte en
-                                <strong>*JóvenesSTEM* MR</strong>
-                            </p>
+                            <h4 data-i18n="method.feat3_title">Certificación validada</h4>
+                            <p data-i18n="method.feat3_desc">Al finalizar el programa, los estudiantes obtienen una
+                                certificación tras aprobar una evaluación que valida sus conocimientos y competencias,
+                                acreditándolos como JóvenesSTEM, mejor preparados para los retos del entorno tecnológico
+                                actual.</p>
                         </div>
                     </div>
                 </div>
@@ -348,13 +382,11 @@
                     <div class="explorer-panel active" id="cap1">
                         <div class="panel-grid">
                             <div class="panel-info">
-                                <h3 data-i18n="explorer.cap1_title">La base del universo, base de nuestra Tecnología
-                                </h3>
+                                <h3 data-i18n="explorer.cap1_title">Fundamentación Ciencia</h3>
                                 <p data-i18n="explorer.cap1_desc">Viajaremos desde el Big Bang hasta la estructura misma
-                                    de la vida. Entender las reglas del juego (Física, Biología, Química) vital para
-                                    dominar y entender el futuro de la tecnologia que nos rodea, ser ciudadanos
-                                    concientes en la Ciencia del Cosmos.
-                                </p>
+                                    de la vida. Entender las reglas del juego (Física, Biología, Química) es vital para
+                                    dominar y entender el futuro de la tecnología, ser ciudadanos del Cosmos conscientes
+                                    y soportados en Ciencia. +50 conceptos científicos contenidos en esta unidad.</p>
                                 <div class="panel-stats">
                                     <div class="stat">
                                         <span class="stat-value">I</span>
@@ -409,43 +441,35 @@
                     <div class="explorer-panel" id="cap2">
                         <div class="panel-grid">
                             <div class="panel-info">
-                                <h3 data-i18n="explorer.cap2_title">Ingeniería del Hardware, Un mundo de estándares.
-                                </h3>
-                                <p data-i18n="explorer.cap2_desc">Desmitificamos la "caja negra". La representación
-                                    tecnologica de nuestra ciencia, enteremos que es vivir en un mundo de estadares
-                                    tecnologicos y como se avanza cuando se ha llegado a los límites, lo que significa
-                                    trabajar en las fronteras de la Ciencia.</p>
+                                <h3 data-i18n="explorer.cap2_title">Ingeniería del Hardware</h3>
+                                <p data-i18n="explorer.cap2_desc">Desmitificamos la "caja negra". Nuestra tecnología es
+                                    la representación tecnológica de nuestra ciencia, enteremos que es vivir en un mundo
+                                    de estándares tecnológicos y cómo se avanza cuando se ha llegado a los límites, lo
+                                    que significa trabajar en las fronteras de la Ciencia.</p>
                                 <div class="panel-stats">
                                     <div class="stat">
                                         <span class="stat-value">II</span>
                                         <span class="stat-label">Capítulo</span>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-value">100%</span>
-                                        <span class="stat-label">Práctico</span>
+                                        <span class="stat-value" style="font-size: 1.8rem;">Tecnología</span>
+                                        <span class="stat-label"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel-topics">
                                 <ul class="topic-list">
                                     <li class="topic-item">
-                                        <span class="topic-icon">📱</span>
-                                        <div class="topic-text">
-                                            <strong data-i18n="explorer.cap2_item1_title">Industria del Silicio</strong>
-                                            <small data-i18n="explorer.cap2_item1_desc">Chips, obleas y
-                                                nanómetros.</small>
-                                        </div>
-                                    </li>
-                                    <li class="topic-item">
-                                        <span class="topic-icon">⚡</span>
-                                        <div class="topic-text">
-                                            <strong data-i18n="explorer.cap2_item3_title">Procesadores</strong>
-                                            <small data-i18n="explorer.cap2_item3_desc">Arquitectura y lógica
-                                                binaria.</small>
-                                        </div>
-                                    </li>
-                                    <li class="topic-item">
-                                        <span class="topic-icon">📶</span>
+                                        <span class="topic-icon">
+                                            <!-- Wifi/Connectivity Icon -->
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                                                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                                            </svg>
+                                        </span>
                                         <div class="topic-text">
                                             <strong data-i18n="explorer.cap2_item2_title">Conectividad
                                                 Inalámbrica</strong>
@@ -454,7 +478,54 @@
                                         </div>
                                     </li>
                                     <li class="topic-item">
-                                        <span class="topic-icon">🔬</span>
+                                        <span class="topic-icon">
+                                            <!-- Processor/Lightning Icon -->
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                            </svg>
+                                        </span>
+                                        <div class="topic-text">
+                                            <strong data-i18n="explorer.cap2_item3_title">Procesadores</strong>
+                                            <small data-i18n="explorer.cap2_item3_desc">Arquitectura y lógica
+                                                binaria.</small>
+                                        </div>
+                                    </li>
+                                    <li class="topic-item">
+                                        <span class="topic-icon">
+                                            <!-- Chip/Silicon Icon -->
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                                <rect x="9" y="9" width="6" height="6"></rect>
+                                                <line x1="9" y1="1" x2="9" y2="4"></line>
+                                                <line x1="15" y1="1" x2="15" y2="4"></line>
+                                                <line x1="9" y1="20" x2="9" y2="23"></line>
+                                                <line x1="15" y1="20" x2="15" y2="23"></line>
+                                                <line x1="20" y1="9" x2="23" y2="9"></line>
+                                                <line x1="20" y1="14" x2="23" y2="14"></line>
+                                                <line x1="1" y1="9" x2="4" y2="9"></line>
+                                                <line x1="1" y1="14" x2="4" y2="14"></line>
+                                            </svg>
+                                        </span>
+                                        <div class="topic-text">
+                                            <strong data-i18n="explorer.cap2_item1_title">Industria del Silicio</strong>
+                                            <small data-i18n="explorer.cap2_item1_desc">Microchips y nanómetros.</small>
+                                        </div>
+                                    </li>
+                                    <li class="topic-item">
+                                        <span class="topic-icon">
+                                            <!-- Microscope/Nano Icon -->
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                                                <path d="M6 18h8"></path>
+                                                <path d="M3 22h18"></path>
+                                                <path d="M14 22a7 7 0 1 0 0-14h-1"></path>
+                                                <path d="M9 14h2"></path>
+                                                <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path>
+                                                <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path>
+                                            </svg>
+                                        </span>
                                         <div class="topic-text">
                                             <strong data-i18n="explorer.cap2_item4_title">Nanotecnología</strong>
                                             <small data-i18n="explorer.cap2_item4_desc">El futuro a escala
@@ -560,6 +631,65 @@
         </div>
     </section>
 
+    <!-- Video Demo Section -->
+    <section class="section section-light" id="video-demo">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow animate-on-scroll" data-i18n="video.eyebrow">Mira el video explicativo</p>
+                <h2 class="section-title animate-on-scroll" data-i18n="video.title">
+                    Qué nos<br>
+                    <span class="text-gradient-blue">mueve</span>
+                </h2>
+            </div>
+            <div class="video-container animate-on-scroll">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQDH4WyEd1I/"
+                    data-instgrm-version="14"
+                    style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 0 auto; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);">
+                    <div style="padding:16px;">
+                        <a href="https://www.instagram.com/reel/DQDH4WyEd1I/"
+                            style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                            target="_blank">
+                            <div style="display: flex; flex-direction: row; align-items: center; padding: 16px;">
+                                <div
+                                    style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                </div>
+                                <div
+                                    style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                    <div
+                                        style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                    </div>
+                                    <div
+                                        style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 19% 0;"></div>
+                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                                <svg width="50px" height="50px" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                            <g>
+                                                <path
+                                                    d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div style="padding-top: 8px;">
+                                <div
+                                    style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                    Ver esta publicación en Instagram</div>
+                            </div>
+                        </a>
+                    </div>
+                </blockquote>
+                <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+        </div>
+    </section>
+
     <!-- Alignment Section -->
     <section class="section section-dark" id="alineacion">
         <div class="container">
@@ -576,7 +706,10 @@
                         <span class="badge-country">🇲🇽</span>
                         <span class="badge-text">México</span>
                     </div>
-                    <h3 class="text-gold-glow">RENAC</h3>
+                    <h3 class="text-gold-container">
+                        <span class="text-gold-glow">RENAC</span>
+                        <span class="text-gold-sub">SEP CONOCER, Estándar EC009.</span>
+                    </h3>
                     <p class="alignment-full">Red Nacional de Actividades Científicas y Competencias</p>
                     <p data-i18n="align.renac_desc">Nuestro contenido está completamente alineado con el marco de
                         competencias nacionales de México,
@@ -595,7 +728,10 @@
                         <span class="badge-country">🇺🇸</span>
                         <span class="badge-text">USA</span>
                     </div>
-                    <h3 class="text-gold-glow">NGSS</h3>
+                    <h3 class="text-gold-container">
+                        <span class="text-gold-glow">NGSS ✨</span>
+                        <!-- Spacer to match height or empty subtitle if needed -->
+                    </h3>
                     <p class="alignment-full">Next Generation Science Standards</p>
                     <p data-i18n="align.ngss_desc">Diseñado para cumplir con los estándares de ciencia de próxima
                         generación de Estados Unidos,
@@ -627,9 +763,7 @@
                     <div class="cert-content">
                         <h4 data-i18n="align.cert_card_title">Certificación Oficial</h4>
                         <p data-i18n="align.cert_card_desc">Al completar el programa, cada estudiante recibe un
-                            certificado oficial de JóvenesSTEM que
-                            avala
-                            sus conocimientos y habilidades en STEM.</p>
+                            certificado oficial de JóvenesSTEM que avala sus competencias y habilidades en STEM.</p>
                     </div>
                 </div>
             </div>
@@ -641,87 +775,119 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-eyebrow animate-on-scroll" data-i18n="price.eyebrow">Inversión Accesible</p>
-                <h2 class="section-title animate-on-scroll" data-i18n="price.title">
-                    Educación de calidad.<br>
+                <h2 class="section-title animate-on-scroll" data-i18n="price.title_new">
+                    Educación de calidad<br>
+                    <span class="text-gradient-blue">para todos</span>
                 </h2>
             </div>
 
-            <!-- IMPLEMENTATION OPTIONS SECTION (NEW) -->
-            <div class="implementation-container animate-on-scroll">
-                <h3 class="impl-title" data-i18n="price.imp_title">Opciones de Implementación</h3>
-                <div class="impl-grid">
-                    <div class="impl-card glass-panel">
-                        <div class="impl-icon">⚡</div>
-                        <h4 data-i18n="price.fast_title">Fast Track (Intensivo)</h4>
-                        <div class="impl-time">20 Horas Totales</div>
-                        <ul class="impl-details">
-                            <li data-i18n="price.fast_ideal"><strong>Ideal para:</strong> Instituciones con tiempos
-                                limitados.</li>
-                            <li><strong>Duración:</strong> 5 semanas</li>
-                            <li><strong>Frecuencia:</strong> 4 horas por sesión (1 vez/semana)</li>
-                            <li data-i18n="price.fast_focus"><strong>Enfoque:</strong> Teórico y demostrativo</li>
-                        </ul>
-                    </div>
-                    <div class="impl-card glass-panel highlight">
-                        <div class="impl-icon">🎓</div>
-                        <h4 data-i18n="price.curr_title">Curricular (Normal)</h4>
-                        <div class="impl-time">90 Horas Totales</div>
-                        <ul class="impl-details">
-                            <li data-i18n="price.curr_ideal"><strong>Ideal para:</strong> Integración completa en plan
-                                de estudios.</li>
-                            <li><strong>Opción A (Anual):</strong> 1 hora / semana</li>
-                            <li><strong>Opción B (Semestral):</strong> 2 horas / semana</li>
-                            <li data-i18n="price.curr_focus"><strong>Enfoque:</strong> Teórico + Práctico (Laboratorio)
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="impl-cta-container">
-                    <a href="#contacto" class="btn btn-primary" data-i18n="price.cta_impl">Conoce las Opciones de
-                        Implementación</a>
-                </div>
-            </div>
+            <!-- THREE PRICING CARDS -->
             <div class="pricing-showcase animate-on-scroll">
-                <div class="pricing-grid">
-                    <!-- CARD 1: FAST TRACK -->
-                    <div class="pricing-card secondary">
+                <div class="pricing-grid pricing-grid-3">
+
+                    <!-- CARD 1: ESCUELAS PÚBLICAS - GRATIS -->
+                    <div class="pricing-card featured">
+                        <div class="pricing-ribbon">🎁 GRATIS</div>
                         <div class="pricing-header">
-                            <h3 class="pricing-title" data-i18n="price.lic_fast">Licencia FastTrack</h3>
-                            <span class="pricing-badge" data-i18n="price.per_student">Por Alumno</span>
+                            <div class="pricing-icon">🏫</div>
+                            <h3 class="pricing-title">Escuelas Públicas</h3>
+                            <span class="pricing-badge">Fast Track o Curricular</span>
                             <div class="pricing-amount">
                                 <span class="currency">$</span>
-                                <span class="price">19</span>
+                                <span class="price">0</span>
                                 <span class="period">MXN</span>
                             </div>
-                            <p class="pricing-note" data-i18n="price.note_mat">+ costo material impreso ($60-70 MXN)</p>
-                            <p class="pricing-note small" data-i18n="price.note_total_fast">Costo total aprox: ~$90-100
-                                MXN</p>
+                            <p class="pricing-note">Solo costo de material impreso</p>
                         </div>
                         <div class="pricing-features">
-                            <h4 data-i18n="price.inc_title">Incluye:</h4>
+                            <h4>Incluye:</h4>
                             <ul>
-                                <li data-i18n="price.ft_item1">
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    BlueBook v1 (Versión FastTrack)
+                                    Licencia de uso completa
                                 </li>
-                                <li data-i18n="price.ft_item2">
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    BlueBook v1 (digital)
+                                </li>
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                     Certificación Oficial
                                 </li>
-                                <li data-i18n="price.ft_item3">
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Acceso a Laboratorio y Manual
+                                    Guía del Docente
                                 </li>
-                                <li data-i18n="price.ft_item4">
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Capacitación virtual
+                                </li>
+                            </ul>
+                            <p class="pricing-ideal"><strong>Ideal para:</strong> Escuelas públicas de cualquier nivel
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: FAST TRACK -->
+                    <div class="pricing-card secondary">
+                        <div class="pricing-header">
+                            <div class="pricing-icon">⚡</div>
+                            <h3 class="pricing-title">Fast Track</h3>
+                            <span class="pricing-badge">20 Horas · Intensivo</span>
+                            <div class="pricing-amount">
+                                <span class="currency">$</span>
+                                <span class="price">19</span>
+                                <span class="period">MXN / alumno</span>
+                            </div>
+                            <p class="pricing-note">+ material impreso (~$70 MXN)</p>
+                        </div>
+                        <div class="pricing-features">
+                            <h4>Incluye:</h4>
+                            <ul>
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    BlueBook v1 (Versión FastTrack)
+                                </li>
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Certificación Oficial
+                                </li>
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Acceso a Laboratorio Virtual
+                                </li>
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Manual del Docente
+                                </li>
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
@@ -729,60 +895,74 @@
                                     Asesoría del Autor
                                 </li>
                             </ul>
+                            <p class="pricing-ideal"><strong>Ideal para:</strong> Empresas, programas públicos, tiempo
+                                reducido</p>
+                            <p class="pricing-format"><strong>Formato:</strong> 5 semanas · 4 hrs/sesión · 1 vez/semana
+                            </p>
                         </div>
                     </div>
 
-                    <!-- CARD 2: CURRICULAR -->
+                    <!-- CARD 3: CURRICULAR -->
                     <div class="pricing-card primary">
                         <div class="pricing-header">
-                            <h3 class="pricing-title" data-i18n="price.lic_curr">Licencia Curricular</h3>
-                            <span class="pricing-badge" data-i18n="price.per_student">Por Alumno</span>
+                            <div class="pricing-icon">🎓</div>
+                            <h3 class="pricing-title">Curricular</h3>
+                            <span class="pricing-badge">90 Horas · Completo</span>
                             <div class="pricing-amount">
                                 <span class="currency">$</span>
                                 <span class="price">39</span>
-                                <span class="period">MXN</span>
+                                <span class="period">MXN / alumno</span>
                             </div>
-                            <p class="pricing-note" data-i18n="price.note_mat">+ costo material impreso ($60-70 MXN)</p>
-                            <p class="pricing-note small" data-i18n="price.note_total_curr">Costo total aprox: ~$100-110
-                                MXN</p>
+                            <p class="pricing-note">+ material impreso (~$70 MXN)</p>
                         </div>
                         <div class="pricing-features">
-                            <h4 data-i18n="price.inc_title">Incluye:</h4>
+                            <h4>Incluye:</h4>
                             <ul>
-                                <li data-i18n="price.cr_item1">
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Libro BlueBook v1 Completo (90h)
+                                    BlueBook v1 Completo (90 horas)
                                 </li>
-                                <li data-i18n="price.cr_item2">
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                     Certificación Oficial Completa
                                 </li>
-                                <li data-i18n="price.cr_item3">
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Acceso a Laboratorio y Manual Docente
+                                    Laboratorio Práctico Incluido
                                 </li>
-                                <li data-i18n="price.cr_item4">
+                                <li>
                                     <svg class="check" viewBox="0 0 24 24">
                                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    Asesoría del Autor
+                                    Guía Docente Premium
+                                </li>
+                                <li>
+                                    <svg class="check" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Asesoría Personalizada del Autor
                                 </li>
                             </ul>
+                            <p class="pricing-ideal"><strong>Ideal para:</strong> Escuelas privadas, integración
+                                curricular</p>
+                            <p class="pricing-format"><strong>Formato:</strong> Anual (1hr/sem) o Semestral (2hrs/sem)
+                            </p>
                         </div>
-                        <!-- Button moved out -->
                     </div>
                 </div>
             </div>
+
             <div class="pricing-cta-container" style="text-align: center; margin-top: 40px;">
                 <a href="#contacto" class="btn btn-primary btn-lg" data-i18n="price.cta_solic">Solicitar
                     Implementación</a>
@@ -797,14 +977,13 @@
                     </div>
                     <div class="comparison-item comparison-jovenes">
                         <span class="comparison-label">JóvenesSTEM</span>
-                        <span class="comparison-value">$19 MXN</span>
+                        <span class="comparison-value">desde $0 MXN</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Author Section -->
     <section class="section section-light" id="autor">
         <div class="container">
             <div class="author-showcase">
@@ -836,10 +1015,75 @@
                             <span data-i18n="author.cred3">Método SIIP NextGen</span>
                         </div>
                     </div>
-                    <a href="https://yepzhi.com" target="_blank" class="btn btn-outline"
-                        style="margin-top: var(--spacing-md); display: inline-block;" data-i18n="author.cta">
-                        Conocer más en Yepzhi.com
+                    <a href="https://yepzhi.com" target="_blank" class="btn btn-pill"
+                        style="margin-top: var(--spacing-md);" data-i18n="author.cta">
+                        Conocer más en @yepzhi.com
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-white" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow animate-on-scroll" data-i18n="faq.eyebrow">Resuelve tus Dudas</p>
+                <h2 class="section-title animate-on-scroll" data-i18n="faq.title">
+                    Preguntas<br>
+                    <span class="text-gradient-blue">Frecuentes</span>
+                </h2>
+            </div>
+            <div class="faq-container animate-on-scroll">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="faq.q1">¿Qué incluye el programa JóvenesSTEM?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a1">El programa incluye el BlueBook v1 (libro de trabajo), acceso a materiales
+                            digitales, guía docente, y certificación oficial al completar el curso.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="faq.q2">¿Necesito equipo especial para implementarlo?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a2">No se requiere equipo especializado. El programa está diseñado para
+                            funcionar con recursos básicos disponibles en la mayoría de las escuelas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="faq.q3">¿Qué capacitación reciben los docentes?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a3">Ofrecemos capacitación integral para docentes que incluye metodología SIIP
+                            NextGen, uso de materiales, y estrategias de evaluación.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="faq.q4">¿Cuánto tiempo dura el programa?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a4">Ofrecemos dos modalidades: Fast Track (20 horas intensivas) y Curricular
+                            (90 horas distribuidas en el ciclo escolar).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-i18n="faq.q5">¿Cómo puedo agendar una demostración?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq.a5">Haz clic en "Agenda una demo sin costo" en la parte superior de esta
+                            página, o contáctanos directamente por WhatsApp para programar una sesión personalizada.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -859,6 +1103,20 @@
                     implementación.
                 </p>
             </div>
+
+            <!-- Quick Contact Options -->
+            <div class="quick-contact animate-on-scroll" style="text-align: center; margin-bottom: var(--spacing-xl);">
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--spacing-md);">¿Prefieres contacto directo?
+                </p>
+                <a href="https://wa.me/qr/MESCGUHS7SYSF1" target="_blank" class="btn btn-whatsapp">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    WhatsApp Directo
+                </a>
+            </div>
+
             <div class="contact-form-container animate-on-scroll">
                 <form class="contact-form" id="contactForm">
                     <div class="form-row">
