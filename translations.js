@@ -20,7 +20,9 @@ const translations = {
         video: {
             eyebrow: "Mira el video explicativo",
             title: "Qué nos<br><span class=\"text-gradient-blue\">mueve</span>",
-            play_btn: "Reproducir ahora"
+            play_btn: "Reproducir ahora",
+            podcast_text: "Quieres saber más, escucha mi podcast en Spotify",
+            podcast_cta: "Escuchar Episodio"
         },
         vision: {
             eyebrow: "Visión",
@@ -249,7 +251,9 @@ const translations = {
         video: {
             eyebrow: "Watch the explainer video",
             title: "What<br><span class=\"text-gradient-blue\">moves us</span>",
-            play_btn: "Play now"
+            play_btn: "Play now",
+            podcast_text: "Want to know more? Listen to my podcast on Spotify",
+            podcast_cta: "Listen to Episode"
         },
         vision: {
             eyebrow: "Vision",
