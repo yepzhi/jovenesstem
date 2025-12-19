@@ -59,9 +59,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=51">
-    <link rel="stylesheet" href="styles_explorer.css?v=51">
-    <link rel="stylesheet" href="styles_updates.css?v=51">
+    <link rel="stylesheet" href="styles.css?v=52">
+    <link rel="stylesheet" href="styles_explorer.css?v=52">
+    <link rel="stylesheet" href="styles_updates.css?v=52">
     <link rel="stylesheet" href="styles_book.css">
     <link rel="stylesheet" href="styles_intro.css">
     <link rel="stylesheet" href="styles_certificate_fix.css">
@@ -73,7 +73,7 @@
         <canvas id="intro-canvas"></canvas>
         <div class="intro-gradient-zoom"></div>
     </div>
-    <script src="translations.js?v=51"></script> <!-- Load Translations -->
+    <script src="translations.js?v=52"></script> <!-- Load Translations -->
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -640,14 +640,61 @@
                     <span class="text-gradient-blue">mueve</span>
                 </h2>
             </div>
-            <div class="video-container animate-on-scroll">
-                <video controls crossorigin playsinline poster="IMG_7287.png"
+            <div class="video-container animate-on-scroll" style="position: relative;">
+                <video id="mainVideo" controls crossorigin playsinline poster="IMG_7287.png"
                     style="width: 100%; max-width: 540px; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <source src="video_opt.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <div class="video-overlay-btn"
+                    onclick="document.getElementById('mainVideo').play(); this.style.display='none';"
+                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer; background: rgba(0,0,0,0.6); padding: 20px 40px; border-radius: 50px; border: 2px solid white; transition: all 0.3s ease;">
+                    <span
+                        style="color: white; font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">▶</span> <span data-i18n="video.play_btn">Reproducir
+                            ahora</span>
+                    </span>
+                </div>
             </div>
-            <div class="certification-preview animate-on-scroll delay-2">
+        </div>
+    </section>
+
+    <!-- Alignment Section -->
+    <section class="section section-dark" id="alineacion">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow animate-on-scroll" data-i18n="align.eyebrow">Alineación Curricular</p>
+                <h2 class="section-title animate-on-scroll" data-i18n="align.title">
+                    Estándares<br>
+                    <span class="text-gradient-gold">Internacionales</span>
+                </h2>
+            </div>
+
+            <div class="alignment-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px;">
+                <!-- RENAC Card -->
+                <div class="feature-card animate-on-scroll delay-1">
+                    <div class="feature-icon">🇲🇽</div>
+                    <h3 class="feature-title">RENAC</h3>
+                    <p class="feature-desc" data-i18n="align.renac_desc">Alineado con el marco nacional.</p>
+                    <div
+                        style="margin-top: 15px; color: #4ade80; font-weight: 600; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                        ✓ <span data-i18n="align.renac_verified">Verificado</span>
+                    </div>
+                </div>
+                <!-- NGSS Card -->
+                <div class="feature-card animate-on-scroll delay-2">
+                    <div class="feature-icon">🇺🇸</div>
+                    <h3 class="feature-title">NGSS</h3>
+                    <p class="feature-desc" data-i18n="align.ngss_desc">Next Generation Science Standards.</p>
+                    <div
+                        style="margin-top: 15px; color: #4ade80; font-weight: 600; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                        ✓ <span data-i18n="align.ngss_verified">Verificado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-preview animate-on-scroll delay-3">
                 <div class="cert-card">
                     <div class="cert-icon">
                         <svg viewBox="0 0 64 64" fill="none">
