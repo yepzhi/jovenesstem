@@ -151,7 +151,8 @@ const translations = {
             inc_title: "Incluye:",
             cta_solic: "Solicitar Implementación",
             comp_title: "Comparación de valor",
-            comp_others: "Programas similares"
+            comp_others: "Programas similares",
+            comp_value_js: "desde $0 MXN"
         },
         author: {
             eyebrow: "El Autor",
@@ -182,6 +183,38 @@ const translations = {
             a4: "Ofrecemos dos modalidades: Fast Track (20 horas intensivas) y Curricular (90 horas distribuidas en el ciclo escolar).",
             q5: "¿Cómo puedo agendar una demostración?",
             a5: "Haz clic en \"Agenda una demo sin costo\" en la parte superior de esta página, o contáctanos directamente por WhatsApp para programar una sesión personalizada."
+        },
+        form: {
+            name: "Nombre completo",
+            name_ph: "Tu nombre",
+            email: "Correo electrónico",
+            email_ph: "correo@ejemplo.com",
+            institution: "Institución",
+            inst_ph: "Nombre de la institución",
+            phone: "Teléfono",
+            type: "Tipo de institución",
+            select_option: "Selecciona una opción",
+            primary: "Primaria",
+            secondary: "Secundaria",
+            highschool: "Preparatoria",
+            university: "Universidad",
+            government: "Gobierno / Institución Pública",
+            other: "Otro",
+            students: "Número aproximado de alumnos",
+            students_1_50: "1 - 50 alumnos",
+            students_51_100: "51 - 100 alumnos",
+            students_101_500: "101 - 500 alumnos",
+            students_501_1000: "501 - 1,000 alumnos",
+            students_1000_plus: "Más de 1,000 alumnos",
+            message: "Mensaje (opcional)",
+            message_ph: "Cuéntanos más sobre tus necesidades...",
+            submit: "Enviar Solicitud"
+        },
+        footer: {
+            legal: "Legal",
+            terms: "Términos de Uso",
+            privacy: "Privacidad",
+            copyright: "© 2025 JóvenesSTEM. Todos los derechos reservados."
         }
     },
     en: {
@@ -206,7 +239,7 @@ const translations = {
             title: "What<br><span class=\"text-gradient-blue\">moves us</span>"
         },
         vision: {
-            eyebrow: "The Mission",
+            eyebrow: "Vision",
             title: "Preparing the<br><span class=\"text-gradient\">next generations</span>",
             card1_title: "Massive Education",
             card1_desc: "Self-implementing, ultra-low cost —or even on a <strong>free plan</strong>— requires minimal resources, no complex labs or expensive supplies.",
@@ -336,7 +369,8 @@ const translations = {
             inc_title: "Includes:",
             cta_solic: "Request Implementation",
             comp_title: "Value Comparison",
-            comp_others: "Similar Programs"
+            comp_others: "Similar Programs",
+            comp_value_js: "starts from $0 MXN"
         },
         author: {
             eyebrow: "The Author",
@@ -367,6 +401,38 @@ const translations = {
             a4: "We offer two modes: Fast Track (20 intensive hours) and Curricular (90 hours distributed throughout the school year).",
             q5: "How can I schedule a demonstration?",
             a5: "Click \"Schedule a free demo\" at the top of this page, or contact us directly via WhatsApp to schedule a personalized session."
+        },
+        form: {
+            name: "Full name",
+            name_ph: "Your name",
+            email: "Email address",
+            email_ph: "email@example.com",
+            institution: "Institution",
+            inst_ph: "Institution name",
+            phone: "Phone",
+            type: "Institution type",
+            select_option: "Select an option",
+            primary: "Elementary",
+            secondary: "Middle School",
+            highschool: "High School",
+            university: "University",
+            government: "Government / Public Institution",
+            other: "Other",
+            students: "Approximate number of students",
+            students_1_50: "1 - 50 students",
+            students_51_100: "51 - 100 students",
+            students_101_500: "101 - 500 students",
+            students_501_1000: "501 - 1,000 students",
+            students_1000_plus: "More than 1,000 students",
+            message: "Message (optional)",
+            message_ph: "Tell us more about your needs...",
+            submit: "Send Request"
+        },
+        footer: {
+            legal: "Legal",
+            terms: "Terms of Use",
+            privacy: "Privacy",
+            copyright: "© 2025 JóvenesSTEM. All rights reserved."
         }
     }
 };

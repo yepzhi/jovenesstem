@@ -59,9 +59,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=43">
-    <link rel="stylesheet" href="styles_explorer.css?v=43">
-    <link rel="stylesheet" href="styles_updates.css?v=43">
+    <link rel="stylesheet" href="styles.css?v=44">
+    <link rel="stylesheet" href="styles_explorer.css?v=44">
+    <link rel="stylesheet" href="styles_updates.css?v=44">
     <link rel="stylesheet" href="styles_book.css">
     <link rel="stylesheet" href="styles_intro.css">
     <link rel="stylesheet" href="styles_certificate_fix.css">
@@ -73,7 +73,7 @@
         <canvas id="intro-canvas"></canvas>
         <div class="intro-gradient-zoom"></div>
     </div>
-    <script src="translations.js?v=43"></script> <!-- Load Translations -->
+    <script src="translations.js?v=44"></script> <!-- Load Translations -->
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -978,7 +978,7 @@
                     </div>
                     <div class="comparison-item comparison-jovenes">
                         <span class="comparison-label">JóvenesSTEM</span>
-                        <span class="comparison-value">desde $0 MXN</span>
+                        <span class="comparison-value" data-i18n="price.comp_value_js">desde $0 MXN</span>
                     </div>
                 </div>
             </div>
@@ -1131,55 +1131,57 @@
                 <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                            <label for="nombre" data-i18n="form.name">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required data-i18n-placeholder="form.name_ph"
+                                placeholder="Tu nombre">
                         </div>
                         <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                            <label for="email" data-i18n="form.email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required data-i18n-placeholder="form.email_ph"
+                                placeholder="correo@ejemplo.com">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="institucion">Institución</label>
+                            <label for="institucion" data-i18n="form.institution">Institución</label>
                             <input type="text" id="institucion" name="institucion" required
-                                placeholder="Nombre de la institución">
+                                data-i18n-placeholder="form.inst_ph" placeholder="Nombre de la institución">
                         </div>
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
+                            <label for="telefono" data-i18n="form.phone">Teléfono</label>
                             <input type="tel" id="telefono" name="telefono" placeholder="+52 (000) 000-0000">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="tipo">Tipo de institución</label>
+                        <label for="tipo" data-i18n="form.type">Tipo de institución</label>
                         <select id="tipo" name="tipo" required>
-                            <option value="">Selecciona una opción</option>
-                            <option value="primaria">Primaria</option>
-                            <option value="secundaria">Secundaria</option>
-                            <option value="preparatoria">Preparatoria</option>
-                            <option value="universidad">Universidad</option>
-                            <option value="gobierno">Gobierno / Institución Pública</option>
-                            <option value="otro">Otro</option>
+                            <option value="" data-i18n="form.select_option">Selecciona una opción</option>
+                            <option value="primaria" data-i18n="form.primary">Primaria</option>
+                            <option value="secundaria" data-i18n="form.secondary">Secundaria</option>
+                            <option value="preparatoria" data-i18n="form.highschool">Preparatoria</option>
+                            <option value="universidad" data-i18n="form.university">Universidad</option>
+                            <option value="gobierno" data-i18n="form.government">Gobierno / Institución Pública</option>
+                            <option value="otro" data-i18n="form.other">Otro</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="alumnos">Número aproximado de alumnos</label>
+                        <label for="alumnos" data-i18n="form.students">Número aproximado de alumnos</label>
                         <select id="alumnos" name="alumnos" required>
-                            <option value="">Selecciona una opción</option>
-                            <option value="1-50">1 - 50 alumnos</option>
-                            <option value="51-100">51 - 100 alumnos</option>
-                            <option value="101-500">101 - 500 alumnos</option>
-                            <option value="501-1000">501 - 1,000 alumnos</option>
-                            <option value="1000+">Más de 1,000 alumnos</option>
+                            <option value="" data-i18n="form.select_option">Selecciona una opción</option>
+                            <option value="1-50" data-i18n="form.students_1_50">1 - 50 alumnos</option>
+                            <option value="51-100" data-i18n="form.students_51_100">51 - 100 alumnos</option>
+                            <option value="101-500" data-i18n="form.students_101_500">101 - 500 alumnos</option>
+                            <option value="501-1000" data-i18n="form.students_501_1000">501 - 1,000 alumnos</option>
+                            <option value="1000+" data-i18n="form.students_1000_plus">Más de 1,000 alumnos</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="mensaje">Mensaje (opcional)</label>
-                        <textarea id="mensaje" name="mensaje" rows="4"
+                        <label for="mensaje" data-i18n="form.message">Mensaje (opcional)</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" data-i18n-placeholder="form.message_ph"
                             placeholder="Cuéntanos más sobre tus necesidades..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full btn-submit">
-                        <span class="btn-text">Enviar Solicitud</span>
+                        <span class="btn-text" data-i18n="form.submit">Enviar Solicitud</span>
                         <span class="btn-loading">
                             <svg class="spinner" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none"
@@ -1232,16 +1234,16 @@
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Legal</h4>
+                        <h4 data-i18n="footer.legal">Legal</h4>
                         <ul>
-                            <li><a href="#">Términos de Uso</a></li>
-                            <li><a href="#">Privacidad</a></li>
+                            <li><a href="#" data-i18n="footer.terms">Términos de Uso</a></li>
+                            <li><a href="#" data-i18n="footer.privacy">Privacidad</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 JóvenesSTEM. Todos los derechos reservados.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 JóvenesSTEM. Todos los derechos reservados.</p>
                 <p class="footer-location">Hermosillo, Sonora, México</p>
             </div>
         </div>
