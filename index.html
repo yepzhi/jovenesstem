@@ -59,9 +59,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=52">
-    <link rel="stylesheet" href="styles_explorer.css?v=52">
-    <link rel="stylesheet" href="styles_updates.css?v=52">
+    <link rel="stylesheet" href="styles.css?v=53">
+    <link rel="stylesheet" href="styles_explorer.css?v=53">
+    <link rel="stylesheet" href="styles_updates.css?v=53">
     <link rel="stylesheet" href="styles_book.css">
     <link rel="stylesheet" href="styles_intro.css">
     <link rel="stylesheet" href="styles_certificate_fix.css">
@@ -73,7 +73,7 @@
         <canvas id="intro-canvas"></canvas>
         <div class="intro-gradient-zoom"></div>
     </div>
-    <script src="translations.js?v=52"></script> <!-- Load Translations -->
+    <script src="translations.js?v=53"></script> <!-- Load Translations -->
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -642,7 +642,7 @@
             </div>
             <div class="video-container animate-on-scroll" style="position: relative;">
                 <video id="mainVideo" controls crossorigin playsinline poster="IMG_7287.png"
-                    style="width: 100%; max-width: 540px; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    style="width: 100%; max-width: 460px; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <source src="video_opt.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -659,61 +659,32 @@
         </div>
     </section>
 
-    <!-- Alignment Section -->
-    <section class="section section-dark" id="alineacion">
+    <!-- Alignment Section (Restored Style) -->
+    <section class="section section-offset" id="alineacion" style="text-align: center;">
         <div class="container">
-            <div class="section-header">
-                <p class="section-eyebrow animate-on-scroll" data-i18n="align.eyebrow">Alineación Curricular</p>
-                <h2 class="section-title animate-on-scroll" data-i18n="align.title">
-                    Estándares<br>
-                    <span class="text-gradient-gold">Internacionales</span>
-                </h2>
-            </div>
-
-            <div class="alignment-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px;">
-                <!-- RENAC Card -->
-                <div class="feature-card animate-on-scroll delay-1">
-                    <div class="feature-icon">🇲🇽</div>
-                    <h3 class="feature-title">RENAC</h3>
-                    <p class="feature-desc" data-i18n="align.renac_desc">Alineado con el marco nacional.</p>
-                    <div
-                        style="margin-top: 15px; color: #4ade80; font-weight: 600; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
-                        ✓ <span data-i18n="align.renac_verified">Verificado</span>
+            <div class="cert-showcase-centered animate-on-scroll">
+                <div class="cert-frame-container">
+                    <div class="cert-frame">
+                        <img src="certificate_final.png" alt="Certificado JóvenesSTEM" class="cert-image">
                     </div>
-                </div>
-                <!-- NGSS Card -->
-                <div class="feature-card animate-on-scroll delay-2">
-                    <div class="feature-icon">🇺🇸</div>
-                    <h3 class="feature-title">NGSS</h3>
-                    <p class="feature-desc" data-i18n="align.ngss_desc">Next Generation Science Standards.</p>
-                    <div
-                        style="margin-top: 15px; color: #4ade80; font-weight: 600; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
-                        ✓ <span data-i18n="align.ngss_verified">Verificado</span>
-                    </div>
+                    <div class="cert-legend">Oficial</div>
                 </div>
             </div>
-
-            <div class="certification-preview animate-on-scroll delay-3">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <svg viewBox="0 0 64 64" fill="none">
-                            <path d="M32 8L8 20V44L32 56L56 44V20L32 8Z" stroke="url(#certGrad)" stroke-width="2" />
-                            <path d="M32 28L24 32V44L32 48L40 44V32L32 28Z" fill="url(#certGrad)" />
-                            <defs>
-                                <linearGradient id="certGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD700" />
-                                    <stop offset="100%" style="stop-color:#FFA500" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div class="cert-content">
-                        <h4 data-i18n="align.cert_card_title">Certificación Oficial</h4>
-                        <p data-i18n="align.cert_card_desc">Al completar el programa, cada estudiante recibe un
-                            certificado oficial de JóvenesSTEM que avala sus competencias y habilidades en STEM.</p>
-                    </div>
-                </div>
+            <div class="cert-content-centered animate-on-scroll delay-1">
+                <p class="section-eyebrow" data-i18n="cert.eyebrow">Tu Futuro Profesional</p>
+                <h2 class="section-title" data-i18n="cert.title">Certificación Oficial</h2>
+                <p class="text-lg" data-i18n="cert.desc" style="max-width: 700px; margin: 0 auto 2rem;">
+                    Al completar el programa, cada estudiante recibe un certificado que valida sus competencias en
+                    Ciencia, Tecnología y Programación.
+                </p>
+                <ul class="check-list-center" style="display: inline-block; text-align: left;">
+                    <li data-i18n="cert.list1">Alineado con la <strong>Red Nacional de Actividades Científicas
+                            (RENAC)</strong>.</li>
+                    <li data-i18n="cert.list2">Alineado a estándares <strong>NGSS (Next Generation Science
+                            Standards)</strong> de USA.</li>
+                    <li data-i18n="cert.list3">Reconocimiento tangible de tus nuevas habilidades para tu currículum
+                        académico.</li>
+                </ul>
             </div>
         </div>
     </section>
