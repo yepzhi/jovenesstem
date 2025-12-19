@@ -1,6 +1,7 @@
 const translations = {
     es: {
         nav: {
+            video: "Video",
             vision: "Visión",
             method: "Método",
             bluebook: "BlueBook",
@@ -229,6 +230,7 @@ const translations = {
     },
     en: {
         nav: {
+            video: "Video",
             vision: "Vision",
             method: "Method",
             bluebook: "BlueBook",
