@@ -44,6 +44,7 @@
     --gradient-glass-blue: linear-gradient(135deg, rgba(235, 240, 250, 0.9) 0%, rgba(215, 225, 245, 0.8) 100%);
     --gradient-liquid-silver: linear-gradient(135deg, #F5F7FA 0%, #C3CFE2 100%);
     --gradient-liquid-blue: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);
+    --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FDB931 50%, #FFD700 100%);
     /* Subtle liquid accent */
     --gradient-dark: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
     --gradient-radial: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 100%);

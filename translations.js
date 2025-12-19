@@ -211,6 +211,15 @@ const translations = {
             submit: "Enviar Solicitud"
         },
         footer: {
+            tagline: "Transformando el futuro de la educación STEM en México y el mundo.",
+            program: "Programa",
+            vision: "Visión",
+            method: "Método SIIP",
+            bluebook: "BlueBook",
+            implementation: "Implementación",
+            alignment: "Alineación Curricular",
+            pricing: "Precios",
+            contact: "Contacto",
             legal: "Legal",
             terms: "Términos de Uso",
             privacy: "Privacidad",
@@ -429,6 +438,15 @@ const translations = {
             submit: "Send Request"
         },
         footer: {
+            tagline: "Transforming the future of STEM education in Mexico and the world.",
+            program: "Program",
+            vision: "Vision",
+            method: "SIIP Method",
+            bluebook: "BlueBook",
+            implementation: "Implementation",
+            alignment: "Curricular Alignment",
+            pricing: "Pricing",
+            contact: "Contact",
             legal: "Legal",
             terms: "Terms of Use",
             privacy: "Privacy",
@@ -454,6 +472,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (text) {
                 element.innerHTML = text;
+            }
+        });
+
+        // Update placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-i18n-placeholder');
+            const keys = key.split('.');
+            let text = translations[lang];
+
+            keys.forEach(k => {
+                if (text) text = text[k];
+            });
+
+            if (text) {
+                element.placeholder = text;
             }
         });
 
