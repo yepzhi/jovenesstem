@@ -7,12 +7,12 @@ const translations = {
             alignment: "Alineación",
             price: "Precio",
             faq: "FAQ",
-            implement: "Agenda una demo sin costo"
+            implement: "Agenda una demo ahora"
         },
         hero: {
             eyebrow: "Certificación STEM Innovadora",
             subtitle: "El futuro de la educación.<br><span class=\"text-gradient\">Ahora en tus manos.</span>",
-            cta_primary: "Comenzar Implementación",
+            cta_primary: "Agenda una demo ahora",
             cta_secondary: "Conocer al Autor",
             scroll: "Desliza"
         },
@@ -234,12 +234,12 @@ const translations = {
             alignment: "Alignment",
             price: "Pricing",
             faq: "FAQ",
-            implement: "Schedule a free demo"
+            implement: "Schedule a demo now"
         },
         hero: {
             eyebrow: "Innovative STEM Certification",
             subtitle: "The future of education.<br><span class=\"text-gradient\">Now in your hands.</span>",
-            cta_primary: "Start Implementation",
+            cta_primary: "Schedule a demo now",
             cta_secondary: "Meet the Author",
             scroll: "Scroll"
         },
