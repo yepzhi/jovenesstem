@@ -59,9 +59,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=42">
-    <link rel="stylesheet" href="styles_explorer.css?v=42">
-    <link rel="stylesheet" href="styles_updates.css?v=42">
+    <link rel="stylesheet" href="styles.css?v=43">
+    <link rel="stylesheet" href="styles_explorer.css?v=43">
+    <link rel="stylesheet" href="styles_updates.css?v=43">
     <link rel="stylesheet" href="styles_book.css">
     <link rel="stylesheet" href="styles_intro.css">
     <link rel="stylesheet" href="styles_certificate_fix.css">
@@ -73,7 +73,7 @@
         <canvas id="intro-canvas"></canvas>
         <div class="intro-gradient-zoom"></div>
     </div>
-    <script src="translations.js?v=42"></script> <!-- Load Translations -->
+    <script src="translations.js?v=43"></script> <!-- Load Translations -->
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -390,11 +390,11 @@
                                 <div class="panel-stats">
                                     <div class="stat">
                                         <span class="stat-value">I</span>
-                                        <span class="stat-label">Capítulo</span>
+                                        <span class="stat-label" data-i18n="explorer.chapter">Capítulo</span>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-value">Base</span>
-                                        <span class="stat-label">Teórica</span>
+                                        <span class="stat-value" data-i18n="explorer.cap1_section1">Base</span>
+                                        <span class="stat-label" data-i18n="explorer.cap1_section2">Teórica</span>
                                     </div>
                                 </div>
                             </div>
@@ -449,10 +449,11 @@
                                 <div class="panel-stats">
                                     <div class="stat">
                                         <span class="stat-value">II</span>
-                                        <span class="stat-label">Capítulo</span>
+                                        <span class="stat-label" data-i18n="explorer.chapter">Capítulo</span>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-value" style="font-size: 1.8rem;">Tecnología</span>
+                                        <span class="stat-value" data-i18n="explorer.cap2_section1"
+                                            style="font-size: 1.8rem;">Tecnología</span>
                                         <span class="stat-label"></span>
                                     </div>
                                 </div>
@@ -548,11 +549,11 @@
                                 <div class="panel-stats">
                                     <div class="stat">
                                         <span class="stat-value">III</span>
-                                        <span class="stat-label">Capítulo</span>
+                                        <span class="stat-label" data-i18n="explorer.chapter">Capítulo</span>
                                     </div>
                                     <div class="stat">
-                                        <span class="stat-value">Lógica</span>
-                                        <span class="stat-label">& IA</span>
+                                        <span class="stat-value" data-i18n="explorer.cap3_section1">Lógica</span>
+                                        <span class="stat-label" data-i18n="explorer.cap3_section2">& IA</span>
                                     </div>
                                 </div>
                             </div>
@@ -614,7 +615,7 @@
             </div>
             <div class="cert-content-centered animate-on-scroll delay-1">
                 <p class="section-eyebrow" data-i18n="cert.eyebrow">Tu Futuro Profesional</p>
-                <h2 class="section-title">Certificación Oficial</h2>
+                <h2 class="section-title" data-i18n="cert.title">Certificación Oficial</h2>
                 <p class="text-lg" data-i18n="cert.desc" style="max-width: 700px; margin: 0 auto 2rem;">
                     Al completar el programa, cada estudiante recibe un certificado que valida sus competencias en
                     Ciencia, Tecnología y Programación.
