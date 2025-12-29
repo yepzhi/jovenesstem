@@ -158,7 +158,8 @@ const translations = {
             // New additions
             cert_aligned: "Certificación alineada a SEP CONOCER Estándar EC009 (MX) y NGSS (USA)",
             ft_demo_btn: "Descarga Demo Plan de Implementación FastTrack",
-            cr_book_link: "Revisa los contenidos del libro completo a detalle aquí!"
+            cr_book_link: "Revisa los contenidos del libro completo a detalle aquí!",
+            cr_book_url: "https://heyzine.com/flip-book/b3d2f0a53e.html"
         },
         author: {
             eyebrow: "El Autor",
@@ -393,7 +394,8 @@ const translations = {
             // New additions
             cert_aligned: "Certification aligned to SEP CONOCER Standard EC009 (MX) and NGSS (USA)",
             ft_demo_btn: "Download FastTrack Implementation Plan Demo",
-            cr_book_link: "Check the full book contents in detail here!"
+            cr_book_link: "Check the full book contents in detail here!",
+            cr_book_url: "https://heyzine.com/flip-book/cdcc88acef.html"
         },
         author: {
             eyebrow: "The Author",
@@ -501,6 +503,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (text) {
                 element.placeholder = text;
+            }
+        });
+
+        // Update hrefs (links)
+        document.querySelectorAll('[data-i18n-href]').forEach(element => {
+            const key = element.getAttribute('data-i18n-href');
+            const keys = key.split('.');
+            let url = translations[lang];
+
+            keys.forEach(k => {
+                if (url) url = url[k];
+            });
+
+            if (url) {
+                element.href = url;
             }
         });
 
