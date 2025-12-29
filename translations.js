@@ -154,7 +154,11 @@ const translations = {
             cta_solic: "Solicitar Implementación",
             comp_title: "Comparación de valor",
             comp_others: "Programas similares",
-            comp_value_js: "desde $0 MXN"
+            comp_value_js: "desde $0 MXN",
+            // New additions
+            cert_aligned: "Certificación alineada a SEP CONOCER Estándar EC009 (MX) y NGSS (USA)",
+            ft_demo_btn: "Descarga Demo Plan de Implementación FastTrack",
+            cr_book_link: "Revisa los contenidos del libro completo a detalle aquí!"
         },
         author: {
             eyebrow: "El Autor",
@@ -351,10 +355,10 @@ const translations = {
             // Public Schools Card
             ribbon_free: "🎁 FREE",
             pub_title: "Public Schools",
-            pub_badge: "Fast Track or Curricular (complete)",
-            pub_note: "Only printed material cost or free Digital.",
+            pub_badge: "Fast Track or Curricular",
+            pub_note: "Only printed material cost",
             pub_item1: "Full usage license",
-            pub_item2: "BlueBook v1",
+            pub_item2: "BlueBook v1 (digital)",
             pub_item3: "Official Certification",
             pub_item4: "Teacher Guide",
             pub_item5: "Virtual training",
@@ -362,10 +366,11 @@ const translations = {
             // Fast Track Card
             ft_badge: "20 Hours · Intensive",
             ft_note: "+ printed material (~$70 MXN)",
-            ft_item1: "BlueBook v1",
+            ft_item1: "BlueBook v1 (FastTrack Version)",
             ft_item2: "Official Certification",
-            ft_item3: "Teacher Manual",
-            ft_item4: "In-person Author Advisory",
+            ft_item3: "Virtual Lab Access",
+            ft_item4: "Teacher Manual",
+            ft_item5: "Author Advisory",
             ft_ideal: "<strong>Ideal for:</strong> Companies, public programs, limited time",
             ft_format: "<strong>Format:</strong> 5 weeks · 4 hrs/session · 1x/week",
             // Curricular Card
@@ -373,8 +378,9 @@ const translations = {
             cr_note: "+ printed material (~$70 MXN)",
             cr_item1: "Full BlueBook v1 (90 hours)",
             cr_item2: "Full Official Certification",
-            cr_item3: "Teacher Guide",
-            cr_item4: "Personalized Author Advisory",
+            cr_item3: "Hands-on Lab Included",
+            cr_item4: "Premium Teacher Guide",
+            cr_item5: "Personalized Author Advisory",
             cr_ideal: "<strong>Ideal for:</strong> Private schools, curricular integration",
             cr_format: "<strong>Format:</strong> Annual (1hr/wk) or Semester (2hrs/wk)",
             // Common
@@ -383,7 +389,11 @@ const translations = {
             cta_solic: "Request Implementation",
             comp_title: "Value Comparison",
             comp_others: "Similar Programs",
-            comp_value_js: "starts from $0 MXN"
+            comp_value_js: "starts from $0 MXN",
+            // New additions
+            cert_aligned: "Certification aligned to SEP CONOCER Standard EC009 (MX) and NGSS (USA)",
+            ft_demo_btn: "Download FastTrack Implementation Plan Demo",
+            cr_book_link: "Check the full book contents in detail here!"
         },
         author: {
             eyebrow: "The Author",
