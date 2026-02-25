@@ -169,6 +169,15 @@ const translations = {
             cred3: "Método SIIP NextGen",
             cta: "Conocer más en @yepzhi.com"
         },
+        study: {
+            eyebrow: "Respaldado por la Investigación",
+            title: "Datos que<br><span class=\"text-gradient-blue\">comprueban la necesidad</span>",
+            subtitle: "Nuestro programa está respaldado por un estudio de investigación realizado con 400 estudiantes de nivel medio superior en Hermosillo, Sonora. Los resultados confirman la urgencia de intervenciones STEM.",
+            stat1: "Estudiantes evaluados en 8 instituciones",
+            stat2: "Puntaje STEM promedio — muy por debajo del estándar",
+            stat3: "Hipótesis confirmadas con evidencia concluyente",
+            cta: "Explora los Resultados Completos →"
+        },
         contact: {
             eyebrow: "Comienza Hoy",
             title: "Implementa JóvenesSTEM<br><span class=\"text-gradient-blue\">en tu institución</span>",
@@ -404,6 +413,15 @@ const translations = {
             cred2: "Author of BlueBook v1",
             cred3: "SIIP NextGen Method",
             cta: "Learn more at @yepzhi.com"
+        },
+        study: {
+            eyebrow: "Backed by Research",
+            title: "Data that<br><span class=\"text-gradient-blue\">proves the need</span>",
+            subtitle: "Our programme is backed by a research study involving 400 upper secondary students in Hermosillo, Sonora. The findings confirm the urgency of STEM interventions.",
+            stat1: "Students assessed across 8 institutions",
+            stat2: "Average STEM score — well below standard",
+            stat3: "Hypotheses confirmed with conclusive evidence",
+            cta: "Explore the Full Results →"
         },
         contact: {
             eyebrow: "Start Today",
