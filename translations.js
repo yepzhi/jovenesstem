@@ -172,10 +172,11 @@ const translations = {
         study: {
             eyebrow: "Respaldado por la Investigación",
             title: "Datos que<br><span class=\"text-gradient-blue\">comprueban la necesidad</span>",
-            subtitle: "Nuestro programa está respaldado por un estudio de investigación realizado con 400 estudiantes de nivel medio superior en Hermosillo, Sonora. Los resultados confirman la urgencia de intervenciones STEM.",
-            stat1: "Estudiantes evaluados en 8 instituciones",
-            stat2: "Puntaje STEM promedio — muy por debajo del estándar",
-            stat3: "Hipótesis confirmadas con evidencia concluyente",
+            subtitle: "Diagnóstico de competencias STEM basado en el análisis de PISA 2022 (OCDE), MEJOREDU/PLANEA y Hermosillo ¿Cómo Vamos? Los resultados confirman la urgencia de intervenciones STEM.",
+            stat1: "Estudios Institucionales",
+            stat2: "Estudiantes MX evaluados",
+            stat3: "Países en PISA",
+            stat4: "Hipótesis confirmadas con evidencia concluyente",
             cta: "Explora los Resultados Completos →"
         },
         contact: {
@@ -417,10 +418,11 @@ const translations = {
         study: {
             eyebrow: "Backed by Research",
             title: "Data that<br><span class=\"text-gradient-blue\">proves the need</span>",
-            subtitle: "Our programme is backed by a research study involving 400 upper secondary students in Hermosillo, Sonora. The findings confirm the urgency of STEM interventions.",
-            stat1: "Students assessed across 8 institutions",
-            stat2: "Average STEM score — well below standard",
-            stat3: "Hypotheses confirmed with conclusive evidence",
+            subtitle: "STEM competency diagnosis based on the analysis of PISA 2022 (OECD), MEJOREDU/PLANEA, and Hermosillo ¿Cómo Vamos? The results confirm the urgency of STEM interventions.",
+            stat1: "Institutional Studies",
+            stat2: "MX Students Evaluated",
+            stat3: "Countries in PISA",
+            stat4: "Hypotheses confirmed with conclusive evidence",
             cta: "Explore the Full Results →"
         },
         contact: {
