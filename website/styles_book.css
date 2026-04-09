@@ -1,0 +1,128 @@
+/* ====================================
+   3D BOOK ANIMATION STYLES
+   ==================================== */
+
+.hero-book-scene {
+    width: 320px;
+    height: 480px;
+    position: relative;
+    perspective: 1500px;
+    margin: 0 auto;
+}
+
+.book-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-20deg) rotateX(10deg);
+    transition: transform 0.5s ease;
+}
+
+/* Realistic Book Opening */
+.book-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+}
+
+.face-front,
+.face-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.face-front {
+    z-index: 2;
+    background: #111;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.face-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-back {
+    transform: rotateY(180deg);
+    background: #fdfbf7;
+    /* Off-white paper color */
+    box-shadow: inset 5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-inside {
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    top: 1%;
+    left: 0;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transform: translateZ(-2px);
+    /* Slightly behind cover */
+    overflow: hidden;
+}
+
+/* When book opens */
+.hero-book-scene:hover .book-cover,
+.book-3d.open .book-cover {
+    transform: rotateY(-140deg);
+}
+
+.hero-book-scene:hover .book-3d,
+.book-3d.open {
+    transform: rotateY(0deg) rotateX(5deg) translateX(100px);
+    /* Shift to center the open spread */
+}
+
+
+.book-spine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(90deg, #1a1a1a, #333, #1a1a1a);
+    transform: rotateY(90deg) translateZ(-20px);
+    z-index: 0;
+    border-radius: 4px;
+}
+
+/* Page content styling */
+.book-inside img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensure full page visibility */
+}
+
+/* Adjust Glow for Industrial vibe */
+.hero-book-glow {
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(100, 149, 237, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(40px);
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .hero-book-scene {
+        width: 240px;
+        height: 360px;
+        margin: 0 auto;
+    }
+}
