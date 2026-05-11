@@ -12,6 +12,7 @@ const translations = {
         },
         hero: {
             eyebrow: "Certificación STEM Innovadora",
+            now_web: "Descubre la nueva plataforma JóvenesSTEM Web &rarr;",
             subtitle: "El futuro de la educación.<br><span class=\"text-gradient\">Ahora en tus manos.</span>",
             cta_primary: "Agenda una demo ahora",
             cta_secondary: "Conocer al Autor",
@@ -256,6 +257,7 @@ const translations = {
         },
         hero: {
             eyebrow: "Innovative STEM Certification",
+            now_web: "Discover the new JóvenesSTEM Web platform &rarr;",
             subtitle: "The future of education.<br><span class=\"text-gradient\">Now in your hands.</span>",
             cta_primary: "Schedule a demo now",
             cta_secondary: "Meet the Author",
