@@ -104,7 +104,8 @@ const translations = {
             desc: "Al completar el programa, cada estudiante recibe un certificado que valida sus competencias en Ciencia, Tecnología y Programación.",
             list1: "Alineado con la <strong>Red Nacional de Actividades Científicas (RENAC)</strong>.",
             list2: "Alineado a estándares <strong>NGSS (Next Generation Science Standards)</strong> de USA.",
-            list3: "Reconocimiento tangible de tus nuevas habilidades para tu currículum académico."
+            list3: "Reconocimiento tangible de tus nuevas habilidades para tu currículum académico.",
+            list4: "Emisión de micro-credenciales verificables bajo el estándar internacional <strong>Open Badges 3.0 (W3C/1EdTech)</strong>."
         },
         align: {
             eyebrow: "Alineación Curricular",
@@ -113,6 +114,11 @@ const translations = {
             renac_verified: "Verificado",
             ngss_desc: "Diseñado para cumplir con los estándares de ciencia de próxima generación de Estados Unidos, facilitando la implementación internacional.",
             ngss_verified: "Verificado",
+            badges_badge: "W3C / 1EdTech",
+            badges_title: "Open Badges 3.0",
+            badges_subtitle: "Estándar Global de Micro-credenciales",
+            badges_desc: "Emisión de insignias digitales cryptográficamente firmadas e infalsificables para certificar tus habilidades en blockchain y redes profesionales.",
+            badges_verified: "Verificado",
             cert_card_title: "Certificación Oficial",
             cert_card_desc: "Al completar el programa, cada estudiante recibe un certificado oficial de JóvenesSTEM que avala sus competencias y habilidades en STEM."
         },
@@ -349,7 +355,8 @@ const translations = {
             desc: "Upon completing the program, each student receives a certificate validating their competencies in Science, Technology, and Programming.",
             list1: "Aligned with the <strong>National Network of Scientific Activities (RENAC)</strong>.",
             list2: "Aligned with <strong>NGSS (Next Generation Science Standards)</strong> from the USA.",
-            list3: "Tangible recognition of your new skills for your academic resume."
+            list3: "Tangible recognition of your new skills for your academic resume.",
+            list4: "Verifiable micro-credentials issued under the international <strong>Open Badges 3.0 (W3C/1EdTech)</strong> standard."
         },
         align: {
             eyebrow: "Curricular Alignment",
@@ -358,6 +365,11 @@ const translations = {
             renac_verified: "Verified",
             ngss_desc: "Designed to meet Next Generation Science Standards of the United States, facilitating international implementation.",
             ngss_verified: "Verified",
+            badges_badge: "W3C / 1EdTech",
+            badges_title: "Open Badges 3.0",
+            badges_subtitle: "Global Micro-credentials Standard",
+            badges_desc: "Emits cryptographically signed, tamper-proof digital badges to verify your competencies on blockchain and professional networks.",
+            badges_verified: "Verified",
             cert_card_title: "Official Certification",
             cert_card_desc: "Upon completing the program, each student receives an official JovenesSTEM certificate endorsing their STEM knowledge and skills."
         },
