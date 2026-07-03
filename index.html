@@ -99,11 +99,11 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="/dev" style="color: #00d2ff !important; font-weight: 700;">⚡ Lecturas Offline</a></li>
                 <li><a href="#video-demo" data-i18n="nav.video">Video</a></li>
                 <li><a href="#vision" data-i18n="nav.vision">Visión</a></li>
                 <li><a href="#metodo" data-i18n="nav.method">Método</a></li>
                 <li><a href="#bluebook" data-i18n="nav.bluebook">BlueBook</a></li>
+                <li><a href="#explorar" style="color: #00d2ff !important; font-weight: 700;">⚡ Lecturas Offline</a></li>
                 <li><a href="#alineacion" data-i18n="nav.alignment">Alineación</a></li>
                 <li><a href="#precio" data-i18n="nav.price">Precio</a></li>
                 <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
@@ -151,9 +151,8 @@
                 <span class="text-gradient">Ahora en tus manos.</span>
             </p>
             <div class="hero-cta animate-fade-up delay-4">
-                <a href="/dev" class="btn btn-primary" style="background: linear-gradient(135deg, #00d2ff, #277eff); color: #ffffff !important; border: none; font-weight: 800;">⚡ Studio de Lecturas Offline</a>
-                <a href="#contacto" class="btn btn-secondary" data-i18n="hero.cta_primary">Agenda una demo ahora</a>
-                <a href="#autor" class="btn btn-secondary" data-i18n="hero.cta_secondary">Conocer al Autor</a>
+                <a href="#contacto" class="btn btn-primary" data-i18n="hero.cta_primary">Agenda una demo ahora</a>
+                <a href="#explorar" class="btn btn-secondary" style="border-color: #00d2ff; color: #00d2ff !important; font-weight: 700;">⚡ Modo Lecturas Offline</a>
             </div>
         </div>
         <div class="hero-visual animate-scale-in delay-2">
@@ -487,6 +486,19 @@
             </div>
 
             <div class="book-explorer animate-on-scroll">
+                <!-- Offline Saved Readings Panel -->
+                <div class="offline-saved-box" style="margin-bottom: 24px; background: rgba(0, 210, 255, 0.05); border: 1px solid rgba(0, 210, 255, 0.25); border-radius: 16px; padding: 20px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
+                        <h3 style="font-size: 1.1rem; color: #00d2ff; display:flex; align-items:center; gap: 8px;">
+                            <span style="font-size:1.2rem;">⚡</span> Mis Lecturas Offline Seleccionadas (Expiran en 3 Días)
+                        </h3>
+                        <span id="offline-counter-badge" style="font-size: 0.8rem; background: rgba(0, 210, 255, 0.15); color: #00d2ff; padding: 4px 12px; border-radius: 99px; font-weight: 700;">0/5 Guardadas</span>
+                    </div>
+                    <div id="offline-saved-readings-list">
+                        <p style="font-size:0.88rem; opacity:0.7;">No has guardado lecturas offline. Haz clic en <strong>+ Offline</strong> en cualquiera de las lecciones a continuación (máximo 5 lecturas que expiran en 3 días).</p>
+                    </div>
+                </div>
+
                 <div class="explorer-nav">
                     <button class="explorer-tab active" data-tab="cap1">
                         <span class="tab-number">01</span>

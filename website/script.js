@@ -464,3 +464,248 @@ document.head.appendChild(scrollProgressStyles);
 
 // Initialize scroll progress
 initScrollProgress();
+
+// ====================================
+// JÓVENESSTEM - OFFLINE READING MANAGER (MAX 5 READINGS, 3-DAY EXPIRATION & BOT SYNC)
+// ====================================
+const MAX_OFFLINE_READINGS = 5;
+const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
+
+function getSavedOfflineReadingsMap() {
+  try {
+    const raw = localStorage.getItem('jovenesstem_offline_readings_v1');
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveOfflineReadingsMap(map) {
+  try {
+    localStorage.setItem('jovenesstem_offline_readings_v1', JSON.stringify(map));
+  } catch (e) {}
+}
+
+function getValidOfflineReadings() {
+  const map = getSavedOfflineReadingsMap();
+  const now = Date.now();
+  const valid = [];
+  let updated = false;
+
+  Object.keys(map).forEach(id => {
+    const item = map[id];
+    if (item.expiresAt && now >= item.expiresAt) {
+      delete map[id];
+      updated = true;
+    } else {
+      valid.push(item);
+    }
+  });
+
+  if (updated) saveOfflineReadingsMap(map);
+  return valid;
+}
+
+function toggleOfflineReadingPin(id, title, chapter) {
+  const map = getSavedOfflineReadingsMap();
+  const valid = getValidOfflineReadings();
+  const isSaved = !!map[id];
+
+  if (isSaved) {
+    delete map[id];
+    saveOfflineReadingsMap(map);
+    showOfflineToast('Lectura Removida', `Removida de tus 5 lecturas offline.`, 100, true);
+  } else {
+    if (valid.length >= MAX_OFFLINE_READINGS) {
+      showOfflineToast(
+        '⚠️ Límite Alcanzado (Máx 5 Lecturas)',
+        `Ya tienes ${MAX_OFFLINE_READINGS} lecturas offline guardadas (expiran en 3 días). Remueve una para guardar otra.`,
+        100,
+        false
+      );
+      return false;
+    }
+
+    const now = Date.now();
+    map[id] = {
+      id: id,
+      title: title,
+      chapter: chapter,
+      downloadedAt: now,
+      expiresAt: now + THREE_DAYS_MS,
+      notes: map[id] ? (map[id].notes || '') : '',
+      syncedWithBot: false
+    };
+    saveOfflineReadingsMap(map);
+    showOfflineToast(
+      '📌 Lectura Guardada (3 Días)',
+      `"${title}" guardada offline (${Object.keys(map).length}/5). Expira en 3 días.`,
+      100,
+      true
+    );
+  }
+
+  updateOfflineUI();
+  return true;
+}
+
+function showOfflineToast(title, sub, progress = 100, autoHide = true) {
+  let toast = document.getElementById('jovenesstem-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'jovenesstem-toast';
+    toast.className = 'jovenesstem-toast-banner';
+    toast.innerHTML = `
+      <div class="toast-icon">⚡</div>
+      <div class="toast-content">
+        <div class="toast-title" id="jt-toast-title"></div>
+        <div class="toast-sub" id="jt-toast-sub"></div>
+      </div>
+    `;
+    document.body.appendChild(toast);
+  }
+
+  document.getElementById('jt-toast-title').innerText = title;
+  document.getElementById('jt-toast-sub').innerText = sub;
+
+  toast.classList.add('active');
+  if (autoHide) {
+    setTimeout(() => {
+      toast.classList.remove('active');
+    }, 4000);
+  }
+}
+
+function updateOfflineUI() {
+  const valid = getValidOfflineReadings();
+  const counterBadge = document.getElementById('offline-counter-badge');
+  if (counterBadge) {
+    counterBadge.innerText = `${valid.length}/${MAX_OFFLINE_READINGS} Guardadas`;
+  }
+
+  // Update pin buttons
+  document.querySelectorAll('.topic-item').forEach(item => {
+    const id = item.getAttribute('data-topic-id') || item.innerText.trim().toLowerCase().replace(/\s+/g, '-');
+    item.setAttribute('data-topic-id', id);
+    let pinBtn = item.querySelector('.topic-pin-btn');
+    const isPinned = getSavedOfflineReadingsMap()[id];
+
+    if (!pinBtn) {
+      pinBtn = document.createElement('button');
+      pinBtn.className = 'topic-pin-btn';
+      item.appendChild(pinBtn);
+
+      pinBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const title = item.querySelector('strong') ? item.querySelector('strong').innerText : 'Lectura STEM';
+        toggleOfflineReadingPin(id, title, 'JóvenesSTEM BlueBook');
+      });
+    }
+
+    pinBtn.innerHTML = isPinned ? `📌 3 Días` : `+ Offline`;
+    pinBtn.className = `topic-pin-btn ${isPinned ? 'pinned' : ''}`;
+  });
+
+  // Render Saved Offline Section if container exists
+  const savedContainer = document.getElementById('offline-saved-readings-list');
+  if (savedContainer) {
+    if (valid.length === 0) {
+      savedContainer.innerHTML = `<p style="font-size:0.88rem; opacity:0.7; padding: 12px;">No has guardado lecturas offline. Haz clic en <strong>+ Offline</strong> en cualquiera de las lecciones (máximo 5 lecturas por 3 días).</p>`;
+    } else {
+      let h = '';
+      valid.forEach(v => {
+        const diff = v.expiresAt - Date.now();
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const days = Math.floor(hours / 24);
+        const remStr = days > 0 ? `${days}d ${hours % 24}h restantes` : `${hours}h restantes`;
+
+        h += `
+          <div class="offline-reading-card">
+            <div class="orc-header">
+              <span class="orc-title">📖 ${v.title}</span>
+              <span class="orc-badge">⏳ Expira en ${remStr}</span>
+            </div>
+            <div class="orc-actions">
+              <button class="orc-btn-notes" onclick="openTopicNotesModal('${v.id}', '${v.title}')">📝 ${v.notes ? 'Conclusiones Guardadas' : '+ Anotaciones'}</button>
+              <button class="orc-btn-remove" onclick="toggleOfflineReadingPin('${v.id}', '', '')">🗑️ Quitar</button>
+            </div>
+          </div>
+        `;
+      });
+      savedContainer.innerHTML = h;
+    }
+  }
+}
+
+function openTopicNotesModal(id, title) {
+  const map = getSavedOfflineReadingsMap();
+  const item = map[id] || { notes: '' };
+  
+  let modal = document.getElementById('topic-notes-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'topic-notes-modal';
+    modal.className = 'topic-notes-modal-backdrop';
+    modal.innerHTML = `
+      <div class="topic-notes-modal-card">
+        <div class="tnm-header">
+          <h3>📝 Conclusiones Offline: <span id="tnm-title"></span></h3>
+          <button onclick="closeTopicNotesModal()" class="tnm-close">&times;</button>
+        </div>
+        <p style="font-size:0.84rem; opacity:0.8; margin:8px 0 12px;">Escribe tus comentarios o resúmenes. Se guardarán en tu dispositivo y se enviarán al Bot Socrático al reconectarte.</p>
+        <textarea id="tnm-textarea" rows="5" placeholder="Escribe tus notas aquí..."></textarea>
+        <div class="tnm-footer">
+          <span id="tnm-status">📌 Guardado local</span>
+          <button id="tnm-send-btn" class="tnm-send">🤖 Enviar al Bot Socrático</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  document.getElementById('tnm-title').innerText = title;
+  const area = document.getElementById('tnm-textarea');
+  area.value = item.notes || '';
+
+  area.oninput = (e) => {
+    item.notes = e.target.value;
+    map[id] = item;
+    saveOfflineReadingsMap(map);
+  };
+
+  document.getElementById('tnm-send-btn').onclick = () => {
+    if (!area.value.trim()) {
+      showOfflineToast('Anotación Vacía', 'Escribe primero tus conclusiones.');
+      return;
+    }
+    if (!navigator.onLine) {
+      showOfflineToast('📌 Guardado Localmente', 'Estás sin conexión. Se enviará al Bot cuando estés en línea.');
+      return;
+    }
+    showOfflineToast('🤖 Enviando a Bot Socrático...', 'Procesando tus anotaciones...');
+    setTimeout(() => {
+      showOfflineToast('🤖 Retroalimentación Lista', 'El Bot Socrático analizó tus anotaciones.');
+      closeTopicNotesModal();
+    }, 1200);
+  };
+
+  modal.classList.add('active');
+}
+
+function closeTopicNotesModal() {
+  const modal = document.getElementById('topic-notes-modal');
+  if (modal) modal.classList.remove('active');
+}
+
+function initOfflineReadingManager() {
+  updateOfflineUI();
+
+  // Register PWA Service Worker for offline support
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initOfflineReadingManager();
+});

@@ -2154,3 +2154,192 @@ ol {
 .btn-instagram svg {
     flex-shrink: 0;
 }
+
+/* ====================================
+   JÓVENESSTEM OFFLINE MANAGER STYLES
+   ==================================== */
+.jovenesstem-toast-banner {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(0, 210, 255, 0.4);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(16px);
+    z-index: 99999;
+    transform: translateY(120px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    max-width: 420px;
+    color: #ffffff;
+}
+
+.jovenesstem-toast-banner.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.toast-icon {
+    font-size: 1.4rem;
+    color: #00d2ff;
+}
+
+.toast-title {
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+.toast-sub {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.topic-pin-btn {
+    background: rgba(0, 210, 255, 0.1);
+    color: #00d2ff;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.2s ease;
+}
+
+.topic-pin-btn.pinned {
+    background: rgba(0, 210, 255, 0.25);
+    color: #ffffff;
+    border-color: #00d2ff;
+}
+
+.offline-reading-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orc-title {
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+.orc-badge {
+    font-size: 0.76rem;
+    color: #00d2ff;
+    background: rgba(0, 210, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+}
+
+.orc-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.orc-btn-notes, .orc-btn-remove {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.orc-btn-notes {
+    background: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+}
+
+.orc-btn-remove {
+    background: rgba(255, 59, 48, 0.15);
+    color: #ff3b30;
+}
+
+.topic-notes-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.topic-notes-modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.topic-notes-modal-card {
+    background: #0f172a;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 20px;
+    padding: 24px;
+    width: 90%;
+    max-width: 520px;
+    color: #ffffff;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.tnm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tnm-close {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.topic-notes-modal-card textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    resize: vertical;
+}
+
+.tnm-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.tnm-send {
+    background: linear-gradient(135deg, #00d2ff, #277eff);
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
