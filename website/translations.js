@@ -162,7 +162,7 @@ const translations = {
             comp_others: "Programas similares",
             comp_value_js: "desde $0 MXN",
             // New additions
-            cert_aligned: "Certificación alineada a SEP CONOCER Estándar EC009 (MX) y NGSS (USA)",
+            cert_aligned: "Certificación con alineación metodológica a SEP CONOCER Estándar EC0049 (MX) y NGSS (USA)",
             ft_demo_btn: "Descarga Demo Plan de Implementación FastTrack",
             cr_book_link: "Revisa los contenidos del libro completo a detalle aquí!",
             cr_book_url: "https://heyzine.com/flip-book/b3d2f0a53e.html"
@@ -414,7 +414,7 @@ const translations = {
             comp_others: "Similar Programs",
             comp_value_js: "starts from $0 MXN",
             // New additions
-            cert_aligned: "Certification aligned to SEP CONOCER Standard EC009 (MX) and NGSS (USA)",
+            cert_aligned: "Certification with methodological alignment to SEP CONOCER Standard EC0049 (MX) and NGSS (USA)",
             ft_demo_btn: "Download FastTrack Implementation Plan Demo",
             cr_book_link: "Check the full book contents in detail here!",
             cr_book_url: "https://heyzine.com/flip-book/cdcc88acef.html"
