@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 120" width="700" height="120">
+  <defs>
+    <linearGradient id="jovenesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#277eff" />
+      <stop offset="40%" stop-color="#1a9dff" />
+      <stop offset="100%" stop-color="#00a896" />
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&amp;display=swap');
+      .logo-txt {
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 88px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+      .jovenes {
+        fill: url(#jovenesGrad);
+      }
+      .stem {
+        fill: #16335e;
+      }
+      .reg {
+        font-size: 38px;
+        font-weight: 800;
+        fill: #174c99;
+      }
+    </style>
+  </defs>
+  <text x="10" y="90" class="logo-txt">
+    <tspan class="jovenes">jóvenes</tspan><tspan class="stem">STEM</tspan><tspan class="reg" dy="-40">®</tspan>
+  </text>
+</svg>
